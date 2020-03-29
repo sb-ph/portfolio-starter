@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.posts
+  size: 10
+  alias: postslist
+  reverse: true
+permalink: "posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+{% for post in postslist %}
+  {% set postContent = post.templateContent %}
+  {% set postDate = post.date %}
+  {% set postExcerpt = post.data.page.excerpt %}
+  {% set postTitle = post.data.title %}
+  {% set postUrl = post.url %}
+  {% include "post.njk" %}
+{% endfor %}
+
+{% if pagination.pages and pagination.pages.length > 1 %}
+  <nav aria-labelledby="pagination">
+    <ol>
+      {%- for pageEntry in pagination.pages %}
+        <li>
+          <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} aria-label="Page {{ loop.index }}">{{ loop.index }}</a>
+        </li>
+      {%- endfor %}
+    </ol>
+  {% if pagination.page.next %}
+    <a href="{{ pagination.href.next }}" aria-label="Next page">Next</a>
+  {% endif %}
+  </nav>
+{% endif %}

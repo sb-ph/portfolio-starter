@@ -1,0 +1,120 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="project">
+  <header class="project__header">
+    <h1 class="project__title">{{ title | safe }}</h1>
+    {% if content %}
+      <div class="project__text">
+        {{ content | safe }}
+      </div>
+    {% endif %}
+    {% if dateStart or dateEnd or category %}
+      <div class="project__data">
+        {% if dateStart or dateEnd or category %}
+          <p>{{ dateStart | yearRange(dateEnd) | safe }}{{ ', ' + category if category }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+  </header>
+  {% if media %}
+    {% for block in media %}
+      {% if block.size %}
+        {% set blockClasses = " project__block--" ~ block.size %}
+      {% else %}
+        {% set blockClasses = " project__block--lg" %}
+      {% endif %}
+      {% if (block.width and block.height) and (block.height > block.width) %}
+        {% if block.width / block.height < 0.34 %}
+          {% set blockClasses = blockClasses + " project__block--extra-extra-tall" %}
+        {% elif block.width / block.height < 0.5 %}
+          {% set blockClasses = blockClasses + " project__block--extra-tall" %}
+        {% elif block.width / block.height < 0.67 %}
+          {% set blockClasses = blockClasses + " project__block--tall" %}
+        {% else %}
+          {% set blockClasses = blockClasses + " project__block--portrait" %}
+        {% endif %}
+      {% endif %}
+      <div class="project__block{{ blockClasses }}">
+        {% if block.image %}
+          {% set image = block.image | urlencode %}
+          <figure>
+            {% if block.size == 'sm' %}
+              <img
+                class="{{ 'border' if block.border }}"
+                srcset="
+                  https://sambaldwin.imgix.net/media/{{ image }}?w=640&q=50&auto=format 640w,
+                  https://sambaldwin.imgix.net/media/{{ image }}?w=1280&q=50&auto=format 1280w"
+                sizes="
+                  (min-width: 85em) 25vw,
+                  (min-width: 48em) 50vw,
+                  100vw"
+                src="https://sambaldwin.imgix.net/media/{{ image }}?w=640&q=50&auto=format"
+                {% if block.alt %}alt="{{ block.alt }}"{% endif %}
+                loading="lazy"
+                {% if block.width %}width="{{ block.width }}"{% endif %}
+                {% if block.height %}height="{{ block.height }}"{% endif %}
+              >
+            {% else %}
+              <img
+                class="{{ 'border' if block.border }}"
+                srcset="
+                  https://sambaldwin.imgix.net/media/{{ image }}?w=1280&q=50&auto=format 1280w,
+                  https://sambaldwin.imgix.net/media/{{ image }}?w=2560&q=50&auto=format 2560w"
+                sizes="
+                  (min-width: 85em) 50vw,
+                  100vw"
+                src="https://sambaldwin.imgix.net/media/{{ image }}?w=1280&q=50&auto=format"
+                {% if block.alt %}alt="{{ block.alt }}"{% endif %}
+                loading="lazy"
+                {% if block.width %}width="{{ block.width }}"{% endif %}
+                {% if block.height %}height="{{ block.height }}"{% endif %}
+              >
+
+            {% endif %}
+            {% if block.caption %}
+              <figcaption>{{ block.caption | safe }}</figcaption>
+            {% endif %}
+          </figure>
+        {% endif %}
+        {% if block.video %}
+          <figure>
+            <video
+              class="{{ 'border' if block.border }}"
+              src="/media/{{ block.video }}"
+              autoplay
+              loop
+              muted
+              playsinline
+              {% if block.controls %}controls{% endif %}
+              {% if block.width %}width="{{ block.width }}"{% endif %}
+              {% if block.height %}height="{{ block.height }}"{% endif %}
+            ></video>
+            {% if block.caption %}
+              <figcaption>{{ block.caption | safe }}</figcaption>
+            {% endif %}
+          </figure>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% endif %}
+</article>
+
+{% set next = collections.projectsByDate | nextInCollection(page.fileSlug) %}
+{% set previous = collections.projectsByDate | prevInCollection(page.fileSlug) %}
+
+{% if next or previous%}
+  <div class="prev-next">
+    {% if next %}
+      <p class="prev-next__item prev-next__item--next">
+        <a href="{{ next.url }}">Next project</a>
+      </p>
+    {% endif %}
+    {% if previous %}
+      <p class="prev-next__item prev-next__item--prev">
+        <a href="{{ previous.url }}">Previous project</a>
+      </p>
+    {% endif %}
+  </div>
+{% endif %}

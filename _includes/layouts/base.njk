@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{ global.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title ~ ' – ' ~ global.title if title else global.title }}</title>
+    {%- set css -%}
+      {% include "css/variables.css" %}
+      {% include "css/fonts.css" %}
+      {% include "css/base.css" %}
+    {%- endset -%}
+    <style>{{ css | cssmin | safe }}</style>
+    {% include 'meta.njk' %}
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a href="{{ '/' | url }}">{{ global.title }}</a>
+      </h1>
+      <nav>
+      </nav>
+    </header>
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    {% if global.footer %}
+      <footer>
+        {{ global.footer|markdownify|safe }}
+      </footer>
+    {% endif %}
+
+  </body>
+</html>

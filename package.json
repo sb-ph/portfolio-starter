@@ -1,0 +1,28 @@
+{
+  "name": "portfolio-2020",
+  "version": "1.0.0",
+  "description": "A basic portfolio website. (WIP)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sb-ph/portfolio-2020.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sb-ph/portfolio-2020/issues"
+  },
+  "homepage": "https://github.com/sb-ph/portfolio-2020#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "clean-css": "^4.2.3",
+    "luxon": "^1.22.2",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5"
+  }
+}

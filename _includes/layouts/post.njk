@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+---
+{% set postContent = content %}
+{% set postDate = date %}
+{% set postExcerpt = my_custom_excerpt %}
+{% set postTitle = title %}
+{% include "post.njk" %}
+
+{% set next = collections.posts | nextInCollection(page.fileSlug) %}
+{% set previous = collections.posts | prevInCollection(page.fileSlug) %}
+
+{% if next or previous%}
+  <div class="prev-next">
+    {% if next %}
+      <p class="prev-next__item prev-next__item--next">
+        <a href="{{ next.url }}">Next post</a>
+      </p>
+    {% endif %}
+    {% if previous %}
+      <p class="prev-next__item prev-next__item--prev">
+        <a href="{{ previous.url }}">Previous post</a>
+      </p>
+    {% endif %}
+  </div>
+{% endif %}

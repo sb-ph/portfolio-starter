@@ -1,0 +1,13 @@
+
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
+
+{# Meta Tags #}
+{% if description %}
+<meta name="description" content="{{ description or meta.description }}">
+<meta property="og:description" content="{{ description or meta.description }}">
+{% endif %}
+<meta property="og:title" content="{{ title or meta.title }}">
+<meta property="og:url" content="{{ absolutePageUrl }}">
+
+{# RSS Feed #}
+<link type="application/atom+xml" rel="alternate" href="{{ global.url }}/feed.xml" title="{{ global.title }}">
