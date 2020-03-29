@@ -56,6 +56,7 @@ module.exports = function(config) {
 
   // Pass-thru files
   config.addPassthroughCopy("media");
+  config.addPassthroughCopy("admin");
 
   // Layouts
   config.addLayoutAlias("base", "base.njk");

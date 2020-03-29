@@ -16,6 +16,8 @@ A basic portfolio website for as close to free as you can get. WIP
 TODO
 
 - Can only support up to [todo] images
+- Browser support
+- Netlify Identity limits under free tier, https://www.netlify.com/pricing/#identity
 
 ## Getting Started
 
@@ -43,14 +45,27 @@ What this does is fork this repository, creating a duplicate version associated 
 
 When you click the button, you’ll be asked to connect to GitHub. Go ahead and do that.
 
+TODO add more info about what this does, how to find their site in Netlify
+
 #### 4. Configure your site
 
-The easiest way to go live is by forking this repo and deploying it to Netlify.
-You can do that by clicking this button:
+To customize the site-wide information such as the footer text or the site title, edit `src/data/global.json`.
 
-To customize the site, edit `src/data/meta.json` with your details, and replace the markdown files in `src/posts` with your content.
+#### 5. Enable Netlify CMS
 
-#### 5. Hook up your domain
+Netlify CMS is a content management system that will allow you to edit your content without editing code.
+
+To get Netlify CMS working, we need to enable Netlify Identity and Git Gateway. Netlify Identity manages our users and logins, and Git Gateway manages the editorial connection between the CMS and the content which is stored in GitHub. Follow the Netlify documentation to [enable Netlify Identity and Git Gateway](https://www.netlifycms.org/docs/add-to-your-site/#enable-identity-and-git-gateway) or follow the instructions below.
+
+To enable Netlify Identity, navigate to your new website within the Netlify admin area and then click the submenu item Identity. Click the button to enable Netlify Identity. Next, click the Settings button to access the settings and scroll down to Registration. Edit the registration preferences to Invite Only.
+
+Next, scroll down to Services and then click the button Enable Git Gateway. This may open a popup window asking you to log in to GitHub if you aren’t already logged in, but it should enable itself automatically since we already connected our GitHub repo and Netlify instance in step 3.
+
+Once you’ve set up Netlify Identity and Git Gateway, follow Netlify’s instructions to [access the CMS](https://www.netlifycms.org/docs/add-to-your-site/#accessing-the-cms). First you’ll add yourself as a user within the Netlify Identity admin area for your new website, and then you’ll be able to log in at `/admin` (`yoursite.com/admin`, for example).
+
+#### 6. Hook up your domain
+
+TODO
 
 ## Advanced setup
 
@@ -68,7 +83,7 @@ To customize the site, edit `src/data/meta.js` with your details, or set the cor
 
 ## Extending the site
 
-You’re welcome to tinker and extend your website however you please. If you’re interested in our help, just get in touch and we’ll discuss options.
+You’re welcome to tinker and extend your website however you please by following the Eleventy and Netlify CMS documentation. If you’re interested in our help, just get in touch and we’ll discuss options.
 
 ## Colophon
 
