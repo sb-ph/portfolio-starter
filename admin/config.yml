@@ -23,7 +23,7 @@ collections:
               name: "lang",
               widget: "string",
               default: "en",
-              hint: "Use the <a rel="noopener noreferrer" target="_blank" href="https://r12a.github.io/app-subtags/">language tag lookup</a> if you’re not sure which tag to use"
+              hint: "Use the <a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://r12a.github.io/app-subtags/\">language tag lookup</a> if you’re not sure which tag to use"
             }
           - {
               label: "Footer",
