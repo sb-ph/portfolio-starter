@@ -13,24 +13,20 @@ collections:
         file: "_data/global.json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - {
-              label: "URL",
-              name: "url",
-              widget: string
-            }
+          - { label: "URL", name: "url", widget: string }
           - {
               label: "Language",
               name: "lang",
               widget: "string",
               default: "en",
-              hint: "Use the <a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://r12a.github.io/app-subtags/\">language tag lookup</a> if you’re not sure which tag to use"
+              hint: 'Use the <a rel="noopener noreferrer" target="_blank" href="https://r12a.github.io/app-subtags/">language tag lookup</a> if you’re not sure which tag to use',
             }
           - {
               label: "Footer",
               name: "footer",
               widget: "text",
               default: "Website by [sb-ph](https://sb-ph.com)",
-              hint: Markdown supported
+              hint: Markdown supported,
             }
       - label: "Homepage"
         name: "home"
@@ -42,7 +38,7 @@ collections:
               name: "body",
               widget: "text",
               hint: "Markdown is accepted",
-              required: false
+              required: false,
             }
           - {
               label: "Projects",
@@ -52,7 +48,7 @@ collections:
               searchFields: "title",
               valueField: "title",
               multiple: true,
-              required: false
+              required: false,
             }
       - label: "Error page"
         name: "error"
@@ -64,7 +60,7 @@ collections:
               name: "body",
               widget: "text",
               hint: "Markdown is accepted",
-              required: false
+              required: false,
             }
   - name: posts
     label: "Posts"
@@ -86,7 +82,7 @@ collections:
           name: "body",
           widget: "text",
           hint: "Markdown is accepted",
-          required: false
+          required: false,
         }
   - name: pages
     label: "Pages"
@@ -102,7 +98,7 @@ collections:
           name: "body",
           widget: "text",
           hint: "Markdown is accepted",
-          required: false
+          required: false,
         }
   - name: projects
     label: "Projects"
@@ -113,32 +109,31 @@ collections:
     slug: "{{ slug }}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Start Date", name: "dateStart", widget: "datetime", required: false }
       - {
-          label: "End Date",
-          name: "dateEnd",
-          widget: "datetime"
+          label: "Start Date",
+          name: "dateStart",
+          widget: "datetime",
+          required: false,
         }
+      - { label: "End Date", name: "dateEnd", widget: "datetime" }
       - {
-        label: "Media",
-        name: "media",
-        widget: "image",
-        media_library:
-          config:
-            max_file_size: 512000
-        required: false
+          label: "Media",
+          name: "media",
+          widget: "image",
+          media_library: { config: { max_file_size: 512000 } },
+          required: false,
         }
       - {
           label: "Featured Image",
           name: "featured",
           widget: "image",
           hint: "If no featured image is selected, it will not be displayed on the homepage",
-          required: false
+          required: false,
         }
       - {
           label: "Body",
           name: "body",
           widget: "text",
           hint: "Markdown is accepted",
-          required: false
+          required: false,
         }
