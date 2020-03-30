@@ -61,7 +61,7 @@ To enable Netlify Identity, navigate to your new website within the Netlify admi
 
 Next, scroll down to Services and then click the button Enable Git Gateway. This may open a popup window asking you to log in to GitHub if you aren’t already logged in, but it should enable itself automatically since we already connected our GitHub repo and Netlify instance in step 3.
 
-Once you’ve set up Netlify Identity and Git Gateway, follow Netlify’s instructions to [access the CMS](https://www.netlifycms.org/docs/add-to-your-site/#accessing-the-cms). First you’ll add yourself as a user within the Netlify Identity admin area for your new website, and then you’ll be able to log in at `/admin` (`yoursite.com/admin`, for example).
+Once you’ve set up Netlify Identity and Git Gateway, follow Netlify’s instructions to [access the CMS](https://www.netlifycms.org/docs/add-to-your-site/#accessing-the-cms). First you’ll add yourself as a user within the Netlify Identity admin area for your new website, and then you’ll receive an email asking you to accept the invitation. Once you’ve created a password (do _not_ use a duplicate!), then you’ll be able to log in at `/admin` (`yoursite.com/admin`, for example).
 
 #### 6. Hook up your domain
 
