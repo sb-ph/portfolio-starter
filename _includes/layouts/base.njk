@@ -4,12 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title ~ ' – ' ~ global.title if title else global.title }}</title>
-    {%- set css -%}
-      {% include "css/variables.css" %}
-      {% include "css/fonts.css" %}
-      {% include "css/base.css" %}
-    {%- endset -%}
-    <style>{{ css | cssmin | safe }}</style>
+    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     {% include 'snippets/meta.njk' %}
     {% if page.fileSlug == '' %}
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
