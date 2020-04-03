@@ -2,11 +2,14 @@
 layout: layouts/base.njk
 permalink: "/posts/{{ title | slug }}/index.html"
 ---
-{% set postContent = content %}
-{% set postDate = date %}
-{% set postExcerpt = my_custom_excerpt %}
-{% set postTitle = title %}
-{% include "snippets/post.njk" %}
+
+<article>
+  <header>
+    <time datetime="{{ date | dateToFormat('yyyy-LL-dd') }}">{{ date | dateToFormat('d LLL y') }}</time>
+    <h1>{{ title | safe }}</h1>
+  </header>
+  {{ content | safe }}
+</article>
 
 {% set next = collections.posts | nextInCollection(page.fileSlug) %}
 {% set previous = collections.posts | prevInCollection(page.fileSlug) %}

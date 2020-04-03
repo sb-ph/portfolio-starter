@@ -8,12 +8,22 @@ pagination:
 permalink: "posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 {% for post in postslist %}
-  {% set postContent = post.templateContent %}
-  {% set postDate = post.date %}
-  {% set postExcerpt = post.data.page.excerpt %}
-  {% set postTitle = post.data.title %}
-  {% set postUrl = post.url %}
-  {% include "snippets/post.njk" %}
+  <article>
+    <header>
+      <time datetime="{{ post.date | dateToFormat('yyyy-LL-dd') }}">{{ post.date | dateToFormat('d LLL y') }}</time>
+      <h2>
+        <a href="{{ post.url }}">{{ post.data.title | safe }}</a>
+      </h2>
+    </header>
+    {% if post.data.page.excerpt %}
+      {{ post.data.page.excerpt | markdownify | safe }}
+      <p>
+        <a href="{{ post.url }}"aria-label="Continue reading “{{ post.data.title }}”">Read more…</a>
+      </p>
+    {% else %}
+      {{ post.templateContent | safe }}
+    {% endif %}
+  </article>
 {% endfor %}
 
 {% if pagination.pages and pagination.pages.length > 1 %}
