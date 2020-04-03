@@ -6,9 +6,6 @@
     <title>{{ title ~ ' – ' ~ global.title if title else global.title }}</title>
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     {% include 'snippets/meta.njk' %}
-    {% if page.fileSlug == '' %}
-      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    {% endif %}
   </head>
   <body>
   
@@ -29,20 +26,6 @@
       <footer>
         {{ global.footer|markdownify|safe }}
       </footer>
-    {% endif %}
-
-    {% if page.fileSlug == '' %}
-      <script>
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", user => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
-      </script>
     {% endif %}
 
   </body>
