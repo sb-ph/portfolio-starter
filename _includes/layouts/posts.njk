@@ -13,7 +13,7 @@ permalink: "posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1
   {% set postExcerpt = post.data.page.excerpt %}
   {% set postTitle = post.data.title %}
   {% set postUrl = post.url %}
-  {% include "post.njk" %}
+  {% include "snippets/post.njk" %}
 {% endfor %}
 
 {% if pagination.pages and pagination.pages.length > 1 %}

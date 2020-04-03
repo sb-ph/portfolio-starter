@@ -1,0 +1,11 @@
+{
+  "title": "My website",
+  "subtitle": "A portfolio of my work",
+  "lang": "en",
+  "footer": "Website by [sb-ph](https://sb-ph.com)",
+  "url": "https://sb-ph.com",
+  "author": {
+    "name": "Portfolio Starter",
+    "email": "mail@sb-ph.com"
+  }
+}

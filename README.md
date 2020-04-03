@@ -1,6 +1,12 @@
-# Portfolio System 2020
+# Portfolio Starter
 
-A basic portfolio website for as close to free as you can get. WIP
+WIP
+
+This is a lightweight static portfolio starterkit built with Eleventy and hosted on Netlify. It’s is geared towards designers, illustrators, architects, all sorts of individuals who are interested in sharing images of their work and news / posts online.
+
+The intended user may not know any code but is interested in the tech underlying their website, is willing to write in Markdown, and is happy to follow a tutorial or two. It can be used as-is and deployed without touching any code, or it can be used as a jumping off point for further customisation if you’re willing to get your hands dirty with a little HTML and CSS.
+
+
 
 ## Features
 
@@ -17,7 +23,12 @@ TODO
 
 - Can only support up to [todo] images
 - Browser support
-- Netlify Identity limits under free tier, https://www.netlify.com/pricing/#identity
+- Updates have to be done manually
+
+## Suggested extensions
+
+- Hook up to AirTable
+- Forestry CMS
 
 ## Getting Started
 

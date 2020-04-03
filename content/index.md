@@ -1,5 +1,5 @@
 ---
-layout: layouts/home.njk
+layout: layouts/home.njk # Do not remove or alter
 entries:
 ---
 

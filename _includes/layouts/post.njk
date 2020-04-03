@@ -1,11 +1,12 @@
 ---
 layout: layouts/base.njk
+permalink: "/posts/{{ title | slug }}/index.html"
 ---
 {% set postContent = content %}
 {% set postDate = date %}
 {% set postExcerpt = my_custom_excerpt %}
 {% set postTitle = title %}
-{% include "post.njk" %}
+{% include "snippets/post.njk" %}
 
 {% set next = collections.posts | nextInCollection(page.fileSlug) %}
 {% set previous = collections.posts | prevInCollection(page.fileSlug) %}
