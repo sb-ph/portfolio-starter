@@ -119,8 +119,7 @@ module.exports = function(config) {
   });
 
   // Pass-thru files
-  config.addPassthroughCopy("media");
-  config.addPassthroughCopy("admin");
+  config.addPassthroughCopy({ "content/media": "media" });
   config.addPassthroughCopy("css");
 
   // Layouts
