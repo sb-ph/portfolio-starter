@@ -1,8 +1,18 @@
 ---
-layout: layouts/base.njk
+layout: base
 permalink: "/"
 ---
 
-{# TODO Add the projects #}
-
 {{ content | safe }}
+
+{# TODO Hook up featured images, custom homepage order #}
+
+{% for project in collections.projects %}
+  {% if project.data.media %}
+    {% set block = project.data.media[0] %}
+    {% set caption = project.data.title %}
+    <a href="{{ project.url }}">
+      {% include 'snippets/media.njk' %}
+    </a>
+  {% endif %}
+{% endfor %}

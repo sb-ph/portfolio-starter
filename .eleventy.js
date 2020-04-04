@@ -1,5 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNav = require("@11ty/eleventy-navigation");
+
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { DateTime } = require("luxon");
@@ -77,11 +78,20 @@ module.exports = function(config) {
   });
 
   // Collections
-  config.addCollection("projectsByDate", collection => {
-    const projects = collection.getFilteredByTag("projects");
+  config.addCollection("projects", collection => {
+    const projects = collection.getFilteredByGlob("content/projects/*.md");
     return projects.sort(function(a, b) {
       return b.data.dateEnd - a.data.dateEnd;
     });
+  });
+  config.addCollection("posts", function(collection) {
+    const posts = collection.getFilteredByGlob("content/posts/*.md");
+    return posts.sort(function(a, b) {
+      return b.data.date - a.data.date;
+    });
+  });
+  config.addCollection("pages", function(collection) {
+    return collection.getFilteredByGlob("content/pages/*.md");
   });
 
   // Markdown
@@ -123,8 +133,14 @@ module.exports = function(config) {
   config.addPassthroughCopy("css");
 
   // Layouts
-  config.addLayoutAlias("base", "base.njk");
-  config.addLayoutAlias("post", "post.njk");
+  config.addLayoutAlias("base", "layouts/base.njk");
+  config.addLayoutAlias("default", "layouts/default.njk");
+  config.addLayoutAlias("error", "layouts/error.njk");
+  config.addLayoutAlias("feed", "layouts/feed.njk");
+  config.addLayoutAlias("home", "layouts/home.njk");
+  config.addLayoutAlias("post", "layouts/post.njk");
+  config.addLayoutAlias("posts", "layouts/posts.njk");
+  config.addLayoutAlias("project", "layouts/project.njk");
 
   // Base Config
   return {
@@ -134,7 +150,6 @@ module.exports = function(config) {
     templateFormats: ["njk", "md", "html", "liquid"],
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
-    markdownTemplateEngine: "liquid",
     passthroughFileCopy: true
   };
 };

@@ -7,15 +7,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ title }}</title>
-  <subtitle>{{ global.subtitle }}</subtitle>
+  {% if global.subtitle %}
+    <subtitle>{{ global.subtitle }}</subtitle>
+  {% endif %}
   <link href="{{ global.url }}/feed.xml" rel="self"/>
   <link href="{{ global.url }}"/>
   <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
   <id>{{ global.url }}</id>
-  <author>
-    <name>{{ global.author.name }}</name>
-    <email>{{ global.author.email }}</email>
-  </author>
+  {% if global.author %}
+    <author>
+      <name>{{ global.author.name }}</name>
+      <email>{{ global.author.email }}</email>
+    </author>
+  {% endif %}
   {%- for post in collections.posts %}
   {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(global.url) }}{% endset %}
   <entry>

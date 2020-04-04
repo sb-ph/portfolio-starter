@@ -1,5 +1,5 @@
 ---
-layout: layouts/posts.njk # Do not remove or alter
+layout: posts
 title: Blog
 eleventyNavigation:
   key: News

@@ -1,4 +1,4 @@
 ---
-layout: layouts/feed.njk # Do not remove or alter
+layout: feed
 title: "Blog"
 ---
