@@ -3,7 +3,6 @@ const pluginNav = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { DateTime } = require("luxon");
-const CleanCSS = require("clean-css");
 const fs = require("fs");
 
 var getIndex = (collection, currentSlug) => {
@@ -61,9 +60,6 @@ module.exports = function(config) {
       includeOffset: false,
       suppressMilliseconds: true
     });
-  });
-  config.addFilter("cssmin", css => {
-    return new CleanCSS({}).minify(css).styles;
   });
   config.addFilter("nextInCollection", (collection, currentSlug) => {
     const currentIndex = getIndex(collection, currentSlug);
@@ -125,6 +121,7 @@ module.exports = function(config) {
   // Pass-thru files
   config.addPassthroughCopy("media");
   config.addPassthroughCopy("admin");
+  config.addPassthroughCopy("css");
 
   // Layouts
   config.addLayoutAlias("base", "base.njk");
