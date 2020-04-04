@@ -85,18 +85,18 @@ module.exports = function(config) {
   });
 
   // Markdown
-  const mdOpts = {
+  const markdownOptions = {
     html: true,
     breaks: true,
     linkify: true,
     typographer: true
   };
-  const mdlib = markdownIt(mdOpts).use(markdownItAnchor, {
+  const markdownLibrary = markdownIt(markdownOptions).use(markdownItAnchor, {
     permalink: false
   });
-  config.setLibrary("md", mdlib);
+  config.setLibrary("md", markdownLibrary);
   config.addNunjucksFilter("markdownify", markdownString =>
-    markdownIt(mdOpts).render(markdownString)
+    markdownIt(markdownOptions).render(markdownString)
   );
   config.setFrontMatterParsingOptions({
     excerpt: true,
