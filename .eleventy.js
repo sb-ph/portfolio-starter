@@ -135,7 +135,7 @@ module.exports = function(config) {
     templateFormats: ["njk", "md", "html", "liquid"],
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
+    markdownTemplateEngine: "liquid",
     passthroughFileCopy: true
   };
 };
