@@ -24,7 +24,7 @@
 
     {% if global.footer %}
       <footer>
-        {{ global.footer|markdownify|safe }}
+        <p>{{ global.footer | markdownifyInline | safe }}</p>
       </footer>
     {% endif %}
 

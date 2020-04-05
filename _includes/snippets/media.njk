@@ -38,7 +38,7 @@
       ></video>
     {% endif %}
     {% if caption %}
-      <figcaption>{{ caption | markdownify | safe }}</figcaption>
+      <figcaption>{{ caption | markdownifyInline | safe }}</figcaption>
     {% endif %}
   </figure>
 </div>

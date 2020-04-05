@@ -108,6 +108,9 @@ module.exports = function(config) {
   config.addNunjucksFilter("markdownify", markdownString =>
     markdownIt(markdownOptions).render(markdownString)
   );
+  config.addNunjucksFilter("markdownifyInline", markdownString =>
+    markdownIt(markdownOptions).renderInline(markdownString)
+  );
   config.setFrontMatterParsingOptions({
     excerpt: true,
     excerpt_separator: "<!--more-->" // Matches WordPress style
