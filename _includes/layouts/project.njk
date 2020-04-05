@@ -3,26 +3,24 @@ layout: base
 permalink: "/projects/{{ title | slug }}/index.html"
 ---
 
-<article>
-  <header>
-    <h1>{{ title | safe }}</h1>
+<article class="project">
+  <header class="project-header">
+    <h1 class="project-title">{{ title | safe }}</h1>
     {% if content %}
-      <div>
+      <div class="project-text">
         {{ content | safe }}
       </div>
     {% endif %}
     {% if dateStart or dateEnd or category %}
-      <div>
-        {% if dateStart or dateEnd or category %}
-          <p>{{ dateStart | yearRange(dateEnd) | safe }}{{ ', ' + category if category }}</p>
-        {% endif %}
-      </div>
+      <p class="project-details">{{ dateStart | yearRange(dateEnd) | safe }}{{ ', ' + category if category }}</p>
     {% endif %}
   </header>
   {% if media %}
     {% for block in media %}
-      {% set caption = block.caption %}
-      {% include 'snippets/media.njk' %}
+      <div class="project-block">
+        {% set caption = block.caption %}
+        {% include 'snippets/media.njk' %}
+      </div>
     {% endfor %}
   {% endif %}
 </article>
@@ -31,14 +29,14 @@ permalink: "/projects/{{ title | slug }}/index.html"
 {% set previous = collections.projects | prevInCollection(page.fileSlug) %}
 
 {% if next or previous%}
-  <div>
+  <div class="pagination">
     {% if next %}
-      <p>
+      <p class="pagination-item pagination-item-next">
         <a href="{{ next.url }}">Next project</a>
       </p>
     {% endif %}
     {% if previous %}
-      <p>
+      <p class="pagination-item pagination-item-prev">
         <a href="{{ previous.url }}">Previous project</a>
       </p>
     {% endif %}

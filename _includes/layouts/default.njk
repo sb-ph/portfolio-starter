@@ -3,6 +3,9 @@ layout: base
 permalink: "/{{ title | slug }}/index.html"
 ---
 
-<h1>{{ title }}</h1>
-
-{{ content | safe }}
+<article class="page">
+  <header class="page-header">
+    <h1 class="page-title">{{ title | safe }}</h1>
+  </header>
+  {{ content | safe }}
+</article>

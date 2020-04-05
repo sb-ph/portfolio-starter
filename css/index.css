@@ -1,0 +1,406 @@
+/*
+
+Variables
+
+*/
+
+:root {
+  /* Typography */
+  --font-family: "Inter", sans-serif;
+  --font-size-body: 1rem;
+  --font-size-small: 0.75rem;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --line-height: 1.375;
+
+  /* Layout */
+  --padding-container: 1rem;
+  --width-container: 100rem;
+  --width-textcol: 37.5rem;
+  --width-media-sm: 30rem;
+  --width-media-md: 50rem;
+  --width-media-lg: var(--width-container);
+}
+
+/*
+
+Fonts
+
+*/
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/Inter-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/Inter-BoldItalic.woff2") format("woff2");
+}
+
+/*
+
+Base styles
+
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-container);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin-bottom: 1em;
+  margin-top: 3em;
+}
+
+p {
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header a:focus,
+header a:hover {
+  text-decoration: underline;
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+code,
+samp,
+kbd {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+img,
+video,
+iframe {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+figure {
+  margin: 1em 0;
+}
+
+figcaption {
+  font-size: var(--font-size-small);
+  margin-top: 0.5rem;
+}
+
+/*
+
+Layout / global includes
+
+*/
+
+.site-header {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  max-width: var(--width-container);
+}
+
+.site-name {
+  font-weight: inherit;
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-top: 0;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.site-nav li:not(:last-child) {
+  padding-right: 1rem;
+}
+
+.site-main {
+  margin-bottom: 4rem;
+}
+
+.site-footer {
+  font-size: var(--font-size-small);
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+.site-footer > p {
+  margin-bottom: 0;
+}
+
+/*
+
+Homepage
+
+*/
+
+.home-intro {
+  margin-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--width-textcol);
+}
+
+.home-block {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8rem;
+}
+
+.home-block > a {
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.home-block > a:focus,
+.home-block > a:hover {
+  text-decoration: underline;
+}
+
+.home-block.sm > a {
+  width: var(--width-media-sm);
+}
+
+.home-block.md > a {
+  width: var(--width-media-md);
+}
+
+.home-block.lg > a {
+  width: var(--width-media-lg);
+}
+
+.home-block.lg {
+  margin-left: calc(var(--padding-container) * -1);
+  margin-right: calc(var(--padding-container) * -1);
+}
+
+.home-block img:not([width]),
+.home-block video:not([width]) {
+  width: 100%;
+}
+
+.home-block-title {
+  margin-bottom: 0;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/*
+
+Page
+
+*/
+
+.page {
+  margin-bottom: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--width-textcol);
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-weight: inherit;
+  margin: 0;
+}
+
+/*
+
+Post
+
+*/
+
+.post {
+  margin-bottom: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--width-textcol);
+}
+
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  font-weight: inherit;
+  margin: 0;
+}
+
+.post-date {
+  display: block;
+  font-size: var(--font-size-small);
+  margin-bottom: 0;
+  margin-top: 0.375rem;
+}
+
+/*
+
+Project page
+
+*/
+
+.project {
+  margin-bottom: 8rem;
+}
+
+.project-header {
+  margin-bottom: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--width-textcol);
+}
+
+.project-title {
+  font-weight: inherit;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+.project-details {
+  font-size: var(--font-size-small);
+}
+
+.project-block {
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.project-block figure {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-block figure.sm {
+  max-width: var(--width-media-sm);
+}
+
+.project-block figure.md {
+  max-width: var(--width-media-md);
+}
+
+.project-block figure.lg {
+  max-width: var(--width-media-lg);
+  margin-left: calc(var(--padding-container) * -1);
+  margin-right: calc(var(--padding-container) * -1);
+}
+
+.project-block img:not([width]),
+.project-block video:not([width]) {
+  width: 100%;
+}
+
+/*
+
+Pagination
+
+*/
+
+/* TODO finish pagination styles */
+
+.pagination {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.pagination-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+.pagination-item {
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.pagination-item a {
+  text-decoration: none;
+}
+
+.pagination-item a:focus,
+.pagination-item a:hover {
+  text-decoration: underline;
+}
