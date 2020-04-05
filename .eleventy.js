@@ -134,6 +134,7 @@ module.exports = function(config) {
   // Pass-thru files
   config.addPassthroughCopy({ "content/media": "media" });
   config.addPassthroughCopy("css");
+  config.addPassthroughCopy("fonts");
 
   // Layouts
   config.addLayoutAlias("base", "layouts/base.njk");
