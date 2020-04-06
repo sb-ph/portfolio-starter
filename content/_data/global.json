@@ -1,9 +1,9 @@
 {
   "title": "Portfolio Starter",
   "subtitle": "A starter kit for static portfolio sites",
-  "lang": "en",
+  "lang": "en-gb",
   "footer": "Built with [Portfolio Starter](https://portfolio-starter.sb-ph.com)",
-  "url": "https://sb-ph.com",
+  "url": "https://portfolio-starter.sb-ph.com",
   "author": {
     "name": "Portfolio Starter",
     "email": "mail@sb-ph.com"

@@ -11,10 +11,10 @@ permalink: "/"
 
 {% for project in collections.projects %}
   {% if project.data.media %}
+    {% set block = project.data.media[0] %}
     {% set blockClasses = block.size if block.size else 'md' %}
     <article class="home-block {{ blockClasses }}">
       <a href="{{ project.url }}">
-        {% set block = project.data.media[0] %}
         {% if block.type == 'image' %}
           {% set image = block.filename | urlencode %}
           <img
