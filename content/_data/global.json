@@ -1,8 +1,8 @@
 {
-  "title": "My website",
-  "subtitle": "A portfolio of my work",
+  "title": "Portfolio Starter",
+  "subtitle": "A starter kit for static portfolio sites",
   "lang": "en",
-  "footer": "Website by [sb-ph](https://sb-ph.com)",
+  "footer": "Built with [Portfolio Starter](https://portfolio-starter.sb-ph.com)",
   "url": "https://sb-ph.com",
   "author": {
     "name": "Portfolio Starter",

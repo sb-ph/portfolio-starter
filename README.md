@@ -1,4 +1,4 @@
-# Portfolio Starter
+![](/content/media/poster.gif)
 
 WIP
 
