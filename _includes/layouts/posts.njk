@@ -18,7 +18,7 @@ permalink: "posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1
       </header>
       {% if post.data.page.excerpt %}
         {{ post.data.page.excerpt | markdownify | safe }}
-        <p><a href="{{ post.url }}"aria-label="Continue reading “{{ post.data.title }}”">Read more…</a></p>
+        <p><a href="{{ post.url }}" aria-label="Continue reading “{{ post.data.title }}”">Read more…</a></p>
       {% else %}
         {{ post.templateContent | safe }}
       {% endif %}
