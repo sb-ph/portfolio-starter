@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Sample project 4
-dateEnd: 2020-04-04
+dateEnd: 2020-04-02
 category: Website
 media:
   - type: image

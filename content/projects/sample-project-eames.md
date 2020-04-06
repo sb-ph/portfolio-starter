@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Sample project 2
-dateEnd: 2020-04-05
+dateEnd: 2020-04-04
 category: Furniture
 media:
   - type: image

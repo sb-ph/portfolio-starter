@@ -1,8 +1,7 @@
 ---
 layout: project
 title: Sample project 3
-dateStart: 1988-02-01
-dateEnd: 2020-04-04
+dateEnd: 2020-04-03
 category: Website
 media:
   - type: image
