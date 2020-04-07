@@ -16,6 +16,7 @@ permalink: "/"
     <article class="home-block {{ blockClasses }}">
       <a href="{{ project.url }}">
         {% if block.type == 'image' %}
+          {# TODO what if not image? Need fallback? #}
           {% set image = block.filename | urlencode %}
           <img
             loading="lazy"
