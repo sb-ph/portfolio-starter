@@ -3,6 +3,7 @@ layout: default
 title: About
 eleventyNavigation:
   key: About
+  order: 1
 ---
 
 A starter kit for static portfolio sites. Lightweight, customisable, open source. It is geared towards designers, illustrators, architects, all sorts of individuals who are interested in sharing images of their work and news / posts online. It isn’t quite ready yet but will be available soon.
