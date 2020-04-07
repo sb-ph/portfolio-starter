@@ -6,13 +6,13 @@ permalink: "/projects/{{ title | slug }}/index.html"
 <article class="project">
   <header class="project-header">
     <h1 class="project-title">{{ title | safe }}</h1>
+    {% if dateStart or dateEnd %}
+      <p class="project-details">{{ dateStart | yearRange(dateEnd) | safe }}</p>
+    {% endif %}
     {% if content %}
       <div class="project-text">
         {{ content | safe }}
       </div>
-    {% endif %}
-    {% if dateStart or dateEnd %}
-      <p class="project-details">{{ dateStart | yearRange(dateEnd) | safe }}</p>
     {% endif %}
   </header>
   {% if media %}
