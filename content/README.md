@@ -183,6 +183,7 @@ And video blocks allow these additional properties. Note that video autoplay is 
 | `controls` | boolean | false   | Whether or not the video controls should be displayed |
 | `loop`     | boolean | false   | Whether or not the video should loop                  |
 | `autoplay` | boolean | false   | Whether or not the video should automatically play    |
+| `muted`    | boolean | false   | Whether or not the video should be muted              |
 
 ### Homepage
 
