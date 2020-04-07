@@ -2,7 +2,6 @@
 layout: project
 title: Sample project 3
 dateEnd: 2020-04-03
-category: Illustration
 media:
   - type: image
     filename: traffic-5.png

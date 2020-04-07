@@ -2,7 +2,6 @@
 layout: project
 title: Sample project 1
 dateEnd: 2020-04-05
-category: Illustration
 media:
   - type: image
     filename: letters-b.jpg

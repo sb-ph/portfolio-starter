@@ -11,8 +11,8 @@ permalink: "/projects/{{ title | slug }}/index.html"
         {{ content | safe }}
       </div>
     {% endif %}
-    {% if dateStart or dateEnd or category %}
-      <p class="project-details">{{ dateStart | yearRange(dateEnd) | safe }}{{ ', ' + category if category }}</p>
+    {% if dateStart or dateEnd %}
+      <p class="project-details">{{ dateStart | yearRange(dateEnd) | safe }}</p>
     {% endif %}
   </header>
   {% if media %}
