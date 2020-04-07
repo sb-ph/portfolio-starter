@@ -28,7 +28,7 @@ permalink: "posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1
 
 {% if pagination.pages and pagination.pages.length > 1 %}
   <nav class="pagination" aria-labelledby="pagination">
-    <ol class="pagination-list">
+    <ol class="pagination-item pagination-list">
       {%- for pageEntry in pagination.pages %}
         <li>
           <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} aria-label="Page {{ loop.index }}">{{ loop.index }}</a>
@@ -36,7 +36,14 @@ permalink: "posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1
       {%- endfor %}
     </ol>
   {% if pagination.page.next %}
-    <a href="{{ pagination.href.next }}" aria-label="Next page">Next</a>
+    <p class="pagination-item">
+      <a href="{{ pagination.href.next }}" aria-label="Next page">Next</a>
+    </p>
+  {% endif %}
+  {% if pagination.page.previous %}
+    <p class="pagination-item">
+      <a href="{{ pagination.href.previous }}" aria-label="Previous page">Previous</a>
+    </p>
   {% endif %}
   </nav>
 {% endif %}

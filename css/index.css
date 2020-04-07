@@ -391,12 +391,16 @@ Pagination
   padding-left: 0;
 }
 
+.pagination-list li:not(:last-child) {
+  padding-right: 1em;
+}
+
 .pagination-item {
   margin-bottom: 0.5rem;
   margin-top: 0;
 }
 
-.pagination-item a {
+.pagination-item a:not([aria-current]) {
   text-decoration: none;
 }
 
