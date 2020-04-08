@@ -1,7 +1,8 @@
 ---
 title: Muybridge
 layout: project
-dateEnd: 2020-04-07
+dateStart: 1830-04-09
+dateEnd: 1904-05-08
 media:
   - type: image
     filename: muybridge-3.jpg
