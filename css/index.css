@@ -174,9 +174,10 @@ Layout / global includes
 
 .site-name {
   font-weight: inherit;
-  margin-bottom: 0;
+  margin-bottom: 0.25rem;
   margin-right: auto;
   margin-top: 0;
+  padding-right: 1rem;
 }
 
 .site-nav ul {
@@ -188,6 +189,7 @@ Layout / global includes
 }
 
 .site-nav li:not(:last-child) {
+  padding-bottom: 0.25rem;
   padding-right: 1rem;
 }
 
