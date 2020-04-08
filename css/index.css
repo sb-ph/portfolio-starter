@@ -277,7 +277,7 @@ Page
 }
 
 .page-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .page-title {
@@ -299,7 +299,7 @@ Post
 }
 
 .post-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .post-title {
@@ -338,7 +338,7 @@ Project page
 }
 
 .project-text {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .project-block {
