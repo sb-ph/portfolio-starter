@@ -1,4 +1,4 @@
-![](/content/media/poster.gif)
+![](/content/media/banner.gif)
 
 WIP
 
