@@ -5,10 +5,10 @@ permalink: "/posts/{{ title | slug }}/index.html"
 
 {# TODO Use filename instead of slugified title throughout the site #}
 
-<article>
-  <header>
-    <time datetime="{{ date | dateToFormat('yyyy-LL-dd') }}">{{ date | dateToFormat('d LLL y') }}</time>
-    <h1>{{ title | safe }}</h1>
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ title | safe }}</h1>
+    <time class="post-date" datetime="{{ date | dateToFormat('yyyy-LL-dd') }}">{{ date | dateToFormat('d LLL y') }}</time>
   </header>
   {{ content | safe }}
 </article>
@@ -17,14 +17,14 @@ permalink: "/posts/{{ title | slug }}/index.html"
 {% set previous = collections.posts | prevInCollection(page.fileSlug) %}
 
 {% if next or previous%}
-  <div class="prev-next">
+  <div class="pagination">
     {% if next %}
-      <p class="prev-next__item prev-next__item--next">
+      <p class="pagination-item pagination-item-next">
         <a href="{{ next.url }}">Next post</a>
       </p>
     {% endif %}
     {% if previous %}
-      <p class="prev-next__item prev-next__item--prev">
+      <p class="pagination-item pagination-item-prev">
         <a href="{{ previous.url }}">Previous post</a>
       </p>
     {% endif %}

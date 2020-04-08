@@ -3,16 +3,31 @@ layout: base
 permalink: "/"
 ---
 
-{{ content | safe }}
+<div class="home-intro">
+  {{ content | safe }}
+</div>
 
 {# TODO Hook up featured images, custom homepage order #}
 
 {% for project in collections.projects %}
   {% if project.data.media %}
     {% set block = project.data.media[0] %}
-    {% set caption = project.data.title %}
-    <a href="{{ project.url }}">
-      {% include 'snippets/media.njk' %}
-    </a>
+    {% set blockClasses = block.size if block.size else 'md' %}
+    <article class="home-block {{ blockClasses }}">
+      <a href="{{ project.url }}">
+        {% if block.type == 'image' %}
+          {# TODO what if not image? Need fallback? #}
+          {% set image = block.filename | urlencode %}
+          <img
+            loading="lazy"
+            src="/media/{{ image }}"
+            alt=""
+            {% if block.width %}width="{{ block.width }}"{% endif %}
+            {% if block.height %}height="{{ block.height }}"{% endif %}
+          >
+        {% endif %}
+        <h2 class="home-block-title">{{ project.data.title | safe }}</h2>
+      </a>
+    </article>
   {% endif %}
 {% endfor %}

@@ -137,7 +137,6 @@ layout: project
 title: Your project title
 dateStart: 1988-02-01
 dateEnd: 2001-03-01
-category: Art direction
 media:
   - type: image
     filename: cloud-01.jpeg
@@ -154,12 +153,11 @@ media:
 
 These are the project-specific YAML properties in more detail.
 
-| Property    | Format       | Default | Description                                                                |
-| ----------- | ------------ | ------- | -------------------------------------------------------------------------- |
-| `category`  | text         | -       | A string that categorizes your project such as “Website” or “Illustration” |
-| `dateEnd`\* | `YYYY-MM-DD` | -       | The end date of your project, used for sorting purposes                    |
-| `dateStart` | `YYYY-MM-DD` | -       | The start date of your project                                             |
-| `media`     | YAML         | -       | A YAML list of media blocks, described in more detail below                |
+| Property    | Format       | Default | Description                                                 |
+| ----------- | ------------ | ------- | ----------------------------------------------------------- |
+| `dateEnd`\* | `YYYY-MM-DD` | -       | The end date of your project, used for sorting purposes     |
+| `dateStart` | `YYYY-MM-DD` | -       | The start date of your project                              |
+| `media`     | YAML         | -       | A YAML list of media blocks, described in more detail below |
 
 The media property allows you to add image and video blocks to your project. The media block properties that apply to both images and video are described below.
 
@@ -185,6 +183,7 @@ And video blocks allow these additional properties. Note that video autoplay is 
 | `controls` | boolean | false   | Whether or not the video controls should be displayed |
 | `loop`     | boolean | false   | Whether or not the video should loop                  |
 | `autoplay` | boolean | false   | Whether or not the video should automatically play    |
+| `muted`    | boolean | false   | Whether or not the video should be muted              |
 
 ### Homepage
 
