@@ -14,7 +14,7 @@ var getIndex = (collection, currentSlug) => {
   return currentIndex;
 };
 
-module.exports = function(config) {
+module.exports = function (config) {
   // Plugins
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNav);
@@ -56,10 +56,10 @@ module.exports = function(config) {
     }
     return date;
   });
-  config.addFilter("dateToISO", date => {
+  config.addFilter("dateToISO", (date) => {
     return DateTime.fromJSDate(date, { zone: "utc" }).toISO({
       includeOffset: false,
-      suppressMilliseconds: true
+      suppressMilliseconds: true,
     });
   });
   config.addFilter("nextInCollection", (collection, currentSlug) => {
@@ -78,19 +78,19 @@ module.exports = function(config) {
   });
 
   // Collections
-  config.addCollection("projects", collection => {
+  config.addCollection("projects", (collection) => {
     const projects = collection.getFilteredByGlob("content/projects/*.md");
-    return projects.sort(function(a, b) {
+    return projects.sort(function (a, b) {
       return b.data.dateEnd - a.data.dateEnd;
     });
   });
-  config.addCollection("posts", function(collection) {
+  config.addCollection("posts", function (collection) {
     const posts = collection.getFilteredByGlob("content/posts/*.md");
-    return posts.sort(function(a, b) {
+    return posts.sort(function (a, b) {
       return b.data.date - a.data.date;
     });
   });
-  config.addCollection("pages", function(collection) {
+  config.addCollection("pages", function (collection) {
     return collection.getFilteredByGlob("content/pages/*.md");
   });
 
@@ -99,27 +99,27 @@ module.exports = function(config) {
     html: true,
     breaks: true,
     linkify: true,
-    typographer: true
+    typographer: true,
   };
   const markdownLibrary = markdownIt(markdownOptions).use(markdownItAnchor, {
-    permalink: false
+    permalink: false,
   });
   config.setLibrary("md", markdownLibrary);
-  config.addNunjucksFilter("markdownify", markdownString =>
+  config.addNunjucksFilter("markdownify", (markdownString) =>
     markdownIt(markdownOptions).render(markdownString)
   );
-  config.addNunjucksFilter("markdownifyInline", markdownString =>
+  config.addNunjucksFilter("markdownifyInline", (markdownString) =>
     markdownIt(markdownOptions).renderInline(markdownString)
   );
   config.setFrontMatterParsingOptions({
     excerpt: true,
-    excerpt_separator: "<!--more-->" // Matches WordPress style
+    excerpt_separator: "<!--more-->", // Matches WordPress style
   });
 
   // BrowserSync
   config.setBrowserSyncConfig({
     callbacks: {
-      ready: function(err, browserSync) {
+      ready: function (err, browserSync) {
         const content_404 = fs.readFileSync("_site/404.html");
 
         browserSync.addMiddleware("*", (req, res) => {
@@ -127,8 +127,8 @@ module.exports = function(config) {
           res.write(content_404);
           res.end();
         });
-      }
-    }
+      },
+    },
   });
 
   // Pass-thru files
@@ -138,7 +138,7 @@ module.exports = function(config) {
 
   // Layouts
   config.addLayoutAlias("base", "layouts/base.njk");
-  config.addLayoutAlias("default", "layouts/default.njk");
+  config.addLayoutAlias("page", "layouts/page.njk");
   config.addLayoutAlias("error", "layouts/error.njk");
   config.addLayoutAlias("feed", "layouts/feed.njk");
   config.addLayoutAlias("home", "layouts/home.njk");
@@ -149,11 +149,11 @@ module.exports = function(config) {
   // Base Config
   return {
     dir: {
-      data: "content/_data"
+      data: "content/_data",
     },
     templateFormats: ["njk", "md", "html", "liquid"],
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
   };
 };
