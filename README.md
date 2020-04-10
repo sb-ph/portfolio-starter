@@ -1,34 +1,30 @@
-![](/content/media/banner.gif)
+# ![Portfolio Starter](/content/media/banner.gif)
 
-This is a lightweight portfolio starterkit built with [Eleventy](#). It is geared towards designers, illustrators, architects, and any other individuals who are interested in sharing images of their work and posts about their activity.
+This is a lightweight portfolio starterkit built with [Eleventy](https://www.11ty.dev/). It is geared towards designers, illustrators, architects, and any other individuals who are interested in sharing their work and activity.
 
-The intended user may not know any code but is interested in the tech behind their website, is willing to write in [Markdown](#), and is happy to learn via documentation.
+The intended user may not know any code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to learn via documentation.
 
 ## Features
 
 - Understated design with an eye towards accessibility [TODO]
 - A deliberately basic codebase that encourages tinkering and customisation even for people unfamiliar with code
 - Generates a static site; static sites tend to load a lot faster than database-driven websites and can be hosted for free
-- Supports RSS out of the box
+- Supports posts, projects, pages, a one-level menu, and RSS out-of-the-box
 - Command line not required; you don’t have to use a code editor or the command line to edit or even deploy this website
 
 ## Getting Started
 
-There are two ways to publish a website with this template depending on your technical skillset. Go down the [no-code setup](#) route if you don’t want to deal with the command line and would prefer to GitHub’s interface. Go down the [command line setup](#) route if you’re happy with `npm` and the command line.
+To get started, you can go down the [no-code setup](#no-code-setup) route if you don’t want to deal with the command line and would prefer to GitHub’s interface, or you can do the [command line setup](#command-line-setup).
 
 ### No-code setup
 
-All you need to get started is a GitHub account, an account with a static hosting provider, and the ability to follow some instructions.
-
 #### 1. Get a GitHub account
 
-GitHub is a platform that stores code. Your website code and content are going to live on GitHub. If you have an account already, go ahead and log in. If not, [sign up for an account](#). The free individual account is sufficient.
+GitHub is a platform that stores code. Your website code and content are going to live on GitHub. If you have an account already, go ahead and log in. If not, [sign up for an account](https://github.com/join). The free individual account is sufficient.
 
 #### 2. Get an account with a static hosting provider
 
-[Netlify](#) and [ZEIT](#) are hosting providers that offer generous free tiers for people with static websites such as this.
-
-If you have an account with either of these platforms already, log in. If you don’t, sign up for one.
+[Netlify](https://www.netlify.com/) and [ZEIT](https://zeit.co/) are hosting providers that offer generous free tiers for people with static websites such as this. If you have an account with either of these platforms already, log in. If you don’t, sign up for one.
 
 #### 3. Deploy this website
 
@@ -42,19 +38,19 @@ If you have a ZEIT account:
 
 [![Deploy with ZEIT](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/sb-ph/portfolio-starter)
 
-#### 4. Edit content
+TODO add info about what happens next
 
-See the [content editing documentation](#) to learn more about where your content lives and how to edit it. The first thing you’ll want to do is edit your [global data](#) so that your website has the correct title and URL.
+#### 4. Edit content in GitHub
 
-To edit or add content without the command line, you need to use GitHub’s interface to navigate your files within your repository. All of your website content lives in the [`/content`](/content) folder.
+To edit or add content without the command line, you need to use GitHub’s interface to navigate your files within the [`/content`](/content) folder in your repository. See the [content editing documentation](#editing-content) to learn more about the structure of the `/content` folder and each of the files within it, particularly the [global data](#global-data) file that includes your website title and URL.
 
-To save your edits or additions, you have to commit your changes using GitHub’s interface. This stores your changes in GitHub and will automatically deploy your changes to Netlify or ZEIT if you hooked one of them up in the previous step. For more on what a commit is, see the [GitHub Glossary](https://help.github.com/en/github/getting-started-with-github/github-glossary). When you commit an edit or an addition in GitHub, you can use the default commit message that is pre-filled. You should always commit directly to the `master` branch (the default setting) since this will ensure that your change gets deployed.
+To edit a page, you must open the relevant file in GitHub and then click the Edit button (the button with the pencil icon) in the upper-right corner above the page contents.
 
-To edit a page, you must click the page to open it in GitHub and then click the Edit button with the pencil icon in the upper-right corner above the page contents.
+If you want to add a new page, you must navigate to the [`posts`](/content/posts), [`projects`](/content/projects), or [`pages`](/content/pages) folder depending on what you want to add and then click the “Create new file” button near the top of the page. This will open a new editor page where you can add your filename and file contents. Since all text content is written in Markdown, the filename must end in `md` (i.e. `my-post-name.md`).
 
-If you want to add a new page, you must navigate to the [`posts`](/content/posts), [`projects`](/content/projects), or [`pages`](/content/pages) folder and then click the “Create new file” button near the top of the page. This will open a new editor page where you add your filename and file contents. Since all text content is written in Markdown, the filename must end in `md` (i.e. `my-post-name.md`).
+If you want to add media, you must navigate to the [`media`](/content/media) folder and then click the “Upload files” button near the top of the page. This will give you an area to upload one or more files. See the [media guidance](#media) for tips on file types and sizes.
 
-If you want to add media, you must navigate to the [`media`](/content/media) folder and then click the “Upload files” button near the top of the page. This will give you an area to upload one or more files. See the [media guidance](#) for tips on file types and sizes.
+To save edits or additions made in GitHub, you must commit your changes using GitHub’s interface at the base of the page. If you hooked up Netlify or ZEIT in the previous step, a commit will also tell GitHub to automatically deploy your changes. For more on what a commit is, see the [GitHub Glossary](https://help.github.com/en/github/getting-started-with-github/github-glossary). When you commit an edit or an addition directly in GitHub, you can use the default commit message that is pre-filled and should commit directly to the `master` branch (the default setting).
 
 ### Command line setup
 
@@ -62,61 +58,45 @@ The command line setup instructions assume that you have familiarity with the co
 
 #### 1. Set up repo locally and on GitHub
 
-Clone repository locally into a named project folder by running
+Clone repository locally into a named project folder by running `git clone https://github.com/sb-ph/portfolio-starter.git my-website` and then change to the new project folder by running `cd my-website`. Run `npm install` to install the dependencies including Eleventy.
 
-```
-git clone https://github.com/sb-ph/portfolio-starter.git my-website
-```
-
-Change to the new project folder: `cd my-website`
-
-Remove the Git history for a fresh start: `rm -rf .git`
-
-Install the dependencies: `npm install`
-
-And initialise a new git repo: `git init`
-
-Commit all of your files to create a new `master` branch, and then [add your project to GitHub using the command line](https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line).
+Run `rm -rf .git` to remove the Git history for a fresh start, and then run `git init` to initialise a new git repo. Commit all of your files to create a new `master` branch, and then [add your project to GitHub using the command line](https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line).
 
 #### 2. Build or serve website
 
-To build the website in to the `/_site` directory, run `npx @11ty/eleventy`. To spin up a server for local development, run `npx @11ty/eleventy --serve`.
+To build the website in to the gitignored `/_site` directory, run `npx @11ty/eleventy`. To spin up a server for local development or content editing, run `npx @11ty/eleventy --serve`.
 
 #### 3. Deploy website
 
 If you want to use Netlify or ZEIT, follow their documentation to get your repository hooked up to your hosting account for continuous deployment. If you want to use another hosting provider, you can find your static files in the `/_site` directory after you generate a build.
 
-#### 4. Edit content
+#### 4. Edit content locally
 
 To edit content locally, spin up a server by running `npx @11ty/eleventy --serve` and then adjust the Markdown and JSON files within the `/content` directory. If your site is hooked up to continuous deployment, make sure you commit your changes to the right branch (probably `master`) otherwise they will not be deployed.
 
-## Hook up a custom domain
+## Use a custom domain with your static hosting
 
-This is an optional step since Netlify and ZEIT give you a default subdomain automatically when you deploy your website. If you want to use your own domain, you should follow their instructions to set this up. [Read more about custom domains on ZEIT](https://zeit.co/docs/v2/custom-domains), or [read more about custom domains on Netlify](#).
+Netlify and ZEIT give you a default subdomain automatically when you deploy your website, so this is an optional step. If you want to use your own domain, you should follow their instructions to set this up. [Read more about custom domains on ZEIT](https://zeit.co/docs/v2/custom-domains), or [read more about custom domains on Netlify](https://docs.netlify.com/domains-https/custom-domains/).
 
-Both of these guides will walk you through how to set up your domain’s Domain Name System (DNS). **DNS can be delicate.** The DNS records for your domain tell browsers where to find your website and tell email servers how to direct emails to you. Be sure to write down any existing DNS records before changing anything.
+Both of these guides will walk you through how to set up your domain’s Domain Name System (DNS). Note that **DNS can be delicate.** The DNS records for your domain tell browsers where to find your website and tell email servers how to direct emails to you. Be sure to write down any existing DNS records before changing anything.
 
-If you repoint the nameservers as part of this setup process and are already using your domain for email, you must add your MX records and any other records related to email to your new hosting provider _before_ you repoint the nameservers. If you do not, your email may go down for a little while.
+If you repoint the nameservers as part of the custom domain setup process and are already using your domain for email, you must add your MX records and any other records related to email to your new hosting provider _before_ you repoint the nameservers. If you do not, your email may go down.
 
 ## Updates and backups
 
-After you’ve created your website, you might want to update it if any changes have been made to Portfolio Starter. Though it is possible to automatically sync these changes via the command line and through the GitHub interface, you must do so with caution since it could remove your own `/content` folder and replace it with the default Portfolio Starter `/content` folder.
+After you’ve created your website, you might want to update it if any changes have been made to Portfolio Starter.
 
-If you’re on an older version of Portfolio Starter and want to update it to a newer version, we recommend doing this manually by replacing all of the folders and files _except_ for the `/content` folder.
+If you’re on an older version of Portfolio Starter and want to update it to a newer version, we recommend doing this manually by replacing all of the folders and files _except_ for the `/content` folder. Though it is possible to automatically sync updates via the command line or GitHub interface, it may not be advisable since it could overwrite your `/content` folder.
 
-Before making any update or making major changes to your website, you should back it up. Visit your repository homepage and click the green “Clone or download” button to download a zipped file of the entire repository.
+Regardless, you should back up your website before making any updates or major changes. Visit your repository homepage and click the green “Clone or download” button to download a zipped file of the entire repository, then store it somewhere safe.
 
 ## Editing content
 
-All of the content lives in the `/content` folder. The [global data](#) including website title and URL is written in JSON. All other text content is written in the straightforward plain-text syntaxes [Markdown and YAML](#). All of the [media](#) lives in the `/content/media` folder.
-
-All of the folders and files that are preceded by an underscore `_` will not result in a permalink page. You can use this file syntax to create drafts, for example `/content/posts/_testing-a-draft.md` would be stored in your codebase but would not be a published page. _However_, it is critical to note that your draft will be visible to others in GitHub if your repository is public.
-
-Read on to learn more about each page type and the properties that are available. Required properties have an asterisk.
+All of the content lives in the [`/content`](/content) folder. This includes the [global data](#global-data), [Markdown files for each page](#markdown-files), and [media](#media). It is important to format and organise each of these files in a particular way so that your site deploys without errors and looks as expected.
 
 ### Global data
 
-The global data in `/content/_data/global.json` is used throughout all of the pages on the website. It is the only content written in JSON, a text format that is used to structure data.
+Certain metadata such as the site title and URL are used throughout the website. All of this global data is contained in the [`/content/_data/global.json`](/content/_data/global.json) file.
 
 The details in this file should be set when the website is first set up and then likely will not be touched again unless the website is moved or the domain changes. This is an example of the `global.json` file:
 
@@ -134,7 +114,7 @@ The details in this file should be set when the website is first set up and then
 }
 ```
 
-JSON syntax is _very_ strict. All keys (i.e. `title`) and all strings (i.e. `My website`) are enclosed in double quotes, and all properties (i.e. `"title": "My website"`) are separated by commas except for the last property. All JSON objects are enclosed in curly brackets `{}`. **Incorrect syntax in this file will result in an error, meaning your changes will not be deployed.**
+This is the only piece of content that must be written in JSON, a text format that is used to structure data. JSON syntax is _very_ strict. All keys (i.e. `title`) and all strings (i.e. `My website`) are enclosed in double quotes, and all properties (i.e. `"title": "My website"`) are separated by commas except for the last property. All JSON objects are enclosed in curly brackets `{}`. **Incorrect syntax in this file will result in an error, meaning your changes will not be deployed.**
 
 These are the properties in more detail.
 
@@ -147,15 +127,19 @@ These are the properties in more detail.
 | `title`\*  | text        | -       | The title of your website                                                                                                             |
 | `url`\*    | url         | -       | Your website URL                                                                                                                      |
 
-### Markdown and YAML
+### Markdown files
 
-All of the content pages except for the global data JSON file are written in [Markdown](#). Markdown is a plain text syntax that is easily converted in to valid HTML. Visit the [markdown-it](https://markdown-it.github.io/) website for a full list of formatting options.
+All of the main content pages including the posts, projects, pages, homepage, 404 error page, blog, and RSS feed are written in [Markdown](https://daringfireball.net/projects/markdown/). Markdown allows you to write using an easy-to-read, easy-to-write plain text format that can be converted to valid HTML. Visit the [markdown-it](https://markdown-it.github.io/) website for a full list of formatting options including lists, links, headings, and more. You can also take a look at the source for this README file; it’s written in Markdown too!
 
-Each Markdown file begins with [YAML](#) frontmatter. YAML is a plain text syntax that allows data to be formatted in a highly-structured manner, but it is more human-readable than alternatives such as JSON. Frontmatter is the text at the top of the file that is fenced in by three dashes on either side, like so:
+All Markdown files end in the `.md` extension, and this starterkit uses the rest of the filename to generate the page slug (the final part of a page’s URL).
+
+Any folders or files that are preceded by an underscore `_` will not be published. Because of that, you can use an underscore to create drafts such as `/content/posts/_testing-a-draft.md`. _However_, it is critical to remember that your draft will be visible to others in GitHub if your repository is public.
+
+Each Markdown file begins with [YAML](https://yaml.org/) frontmatter. YAML is a plain text syntax that allows human-readable text to be formatted as structured data. Frontmatter is the text at the top of the file that is fenced in by three dashes on either side, like so:
 
 ```yaml
 ---
-layout: default
+layout: page
 title: Contact
 description: Get in touch with me via email or phone.
 image: cloud-01.jpeg
@@ -163,7 +147,11 @@ image: cloud-01.jpeg
 
 ```
 
-The YAML frontmatter defines page-specific data such as the page title, the page description, and the layout. These are the basic properties that should be used on every page. Required properties have an asterisk.
+The YAML frontmatter defines page-specific metadata such as the page title, the page description, and the layout.
+
+#### Basic properties
+
+These are the basic YAML properties that should be used on every page.
 
 | Property      | Format | Default | Description                                                                           |
 | ------------- | ------ | ------- | ------------------------------------------------------------------------------------- |
@@ -179,13 +167,55 @@ If using an `image` for social media, refer to the documentation provided by the
 
 The page permalink is generated automatically depending on the layout. If you want to override it on any particular page, you can do so by setting the `permalink` property. The homepage, RSS, and error page permalinks should never be changed.
 
-### Pages
+There is one more basic property available across all pages that pertains to navigation and is described in more detail below.
 
-Pages support only the basic YAML frontmatter listed above. On pages, the title and the Markdown content are displayed.
+#### Navigation properties
 
-### Posts
+This site uses the Eleventy [Navigation Plugin](https://www.11ty.dev/docs/plugins/navigation/) to generate a simple, one-level menu.
 
-Posts support the basic YAML frontmatter as well as the `date` property, like so:
+By default, the menu is set to include the About page and the Posts feed. To add a page to the menu, you must add the `eleventyNavigation` property to that page’s frontmatter. This is an example of the property in use on the About page [`/content/pages/about.md`](/content/pages/about.md):
+
+```yaml
+---
+layout: default
+title: About
+eleventyNavigation:
+  key: About
+  order: 0
+---
+
+```
+
+The `key` sub-property tells Eleventy to add this page to the navigation with the text “About”. The `order` sub-property tells Eleventy that it should come first in the navigation.
+
+You can also add external links to the navigation, for example a link to your GitHub. See the [`/content/pages/github.md`](/content/pages/github.md) page for an example with the following frontmatter:
+
+If you want to add an external link to the navigation, you can create a new Markdown file (for example, `/content/external.md`) with the below frontmatter:
+
+```yaml
+---
+eleventyNavigation:
+  key: GitHub &nearr;
+  order: 3
+  url: http://github.com/sb-ph/portfolio-starter
+permalink: false
+---
+
+```
+
+The `key` sub-property tells Eleventy to add this page to the navigation with the text “GitHub ” (`&nearr;` is the HTML code for a northeast arrow). The `order` sub-property is set to 3 so that it comes last in the menu, and the `url` sub-property is set to the desired URL. The `permalink` property is set to false so that this doesn’t publish a corresponding page on our website.
+
+#### Pages
+
+Pages are found in the [`/content/pages`](/content/pages) folder.
+
+A page’s `layout` must be set to `page` in the frontmatter. Pages support only the [basic properties](#basic-properties) and [navigation properties](#navigation-properties) listed above.
+
+#### Posts
+
+Posts are found in the [`/content/posts`](/content/posts) folder.
+
+A post’s `layout` must be set to `post` in the frontmatter. Posts support the [basic properties](#basic-properties) and [navigation properties](#navigation-properties) as well as the `date` property. This is an example of a post’s frontmatter:
 
 ```yaml
 ---
@@ -196,13 +226,25 @@ date: 2020-03-29 18:00:00
 
 ```
 
-On posts, the title, the date, and the Markdown content are displayed.
+The `date` property determines the publish date of the post and thus the order in the blog and RSS.
 
-You can use the HTML comment `<!--more-->` to generate an excerpt for your posts. If you use the more comment, the post will be truncated after that comment on the full posts feed and a “Read more” link will be displayed.
+You can use the HTML comment `<!--more-->` within your Markdown content to generate an excerpt for your posts like so:
 
-### Projects
+```markdown
+Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
 
-Each project page displays a description, a small amount of optional data related to the project, media, and next / previous links to get to the next and previous projects. This is an example of the YAML frontmatter for a project page.
+<!--more-->
+
+Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis.
+```
+
+If you use the `more` comment, only the text preceding the comment will be displayed on the blog and a “Read more” link will be displayed after this excerpt.
+
+#### Projects
+
+Projects are found in the [`/content/projects`](/content/projects) folder.
+
+A project’s `layout` must be set to `project` in the frontmatter. Projects support the [basic properties](#basic-properties) and [navigation properties](#navigation-properties) as well as the `dateStart`, `dateEnd`, and `media` properties. This is an example of the frontmatter for a project page.
 
 ```yaml
 ---
@@ -224,15 +266,15 @@ media:
 
 ```
 
-These are the project-specific YAML properties in more detail.
+And these are the project-specific properties in more detail:
 
-| Property    | Format       | Default | Description                                                 |
-| ----------- | ------------ | ------- | ----------------------------------------------------------- |
-| `dateEnd`\* | `YYYY-MM-DD` | -       | The end date of your project, used for sorting purposes     |
-| `dateStart` | `YYYY-MM-DD` | -       | The start date of your project                              |
-| `media`     | YAML         | -       | A YAML list of media blocks, described in more detail below |
+| Property    | Format       | Default | Description                                             |
+| ----------- | ------------ | ------- | ------------------------------------------------------- |
+| `dateEnd`\* | `YYYY-MM-DD` | -       | The end date of your project, used for sorting purposes |
+| `dateStart` | `YYYY-MM-DD` | -       | The start date of your project                          |
+| `media`     | YAML         | -       | A YAML list of media blocks, described below            |
 
-The media property allows you to add image and video blocks to your project. The media block properties that apply to both images and video are described below.
+The media property is a strictly-formatted YAML list that can contain image and video blocks. The properties that apply to both images and videos are outlined below.
 
 | Property     | Format   | Default | Description                                                      |
 | ------------ | -------- | ------- | ---------------------------------------------------------------- |
@@ -243,13 +285,13 @@ The media property allows you to add image and video blocks to your project. The
 | `size`       | text     | `lg`    | The size that the media should be displayed; `sm`, `md`, or `lg` |
 | `type`\*     | text     | -       | `image` or `video`                                               |
 
-Image blocks allow this additional property.
+Image blocks require one additional property:
 
 | Property | Format | Default | Description                 |
 | -------- | ------ | ------- | --------------------------- |
 | `alt`\*  | text   | -       | The alt text for your image |
 
-And video blocks allow these additional properties. Note that video autoplay is only supported in certain browsers and devices.
+And video blocks allow the following additional properties. Note that video autoplay is only supported in certain browsers and devices.
 
 | Property   | Format  | Default | Description                                           |
 | ---------- | ------- | ------- | ----------------------------------------------------- |
@@ -258,54 +300,29 @@ And video blocks allow these additional properties. Note that video autoplay is 
 | `autoplay` | boolean | false   | Whether or not the video should automatically play    |
 | `muted`    | boolean | false   | Whether or not the video should be muted              |
 
-### Homepage
+#### Homepage
 
 TODO
 
-### Posts page
+#### Blog page (“Posts”)
 
-The Posts page supports the same properties as a default page.
+The blog page is the [`/content/posts.md`](/content/posts.md) file.
 
-### 404 page
+The blog page’s `layout` must be set to `posts` in the frontmatter. The blog page supports the [basic properties](#basic-properties) and [navigation properties](#navigation-properties). Markdown written beneath the frontmatter is not displayed.
 
-The 404 page only supports the `layout` and `title` properties.
+#### Error
 
-### RSS feed
+The 404 error page is the [`/content/404.md`](/content/404.md) file.
 
-The RSS page only supports the `layout` and `title` properties.
+The 404 error page’s `layout` must be set to `error` in the frontmatter. The error page supports only the `layout` and `title` [basic properties](#basic-properties).
 
-### Navigation
+#### RSS feed
 
-This site uses the Eleventy [Navigation Plugin](https://www.11ty.dev/docs/plugins/navigation/) to generate a simple, one-level menu.
+The RSS page is the [`/content/rss.md`](/content/rss.md) file.
 
-By default, the menu is set to include the About page and the Posts feed. To add a page to the menu, you add an `eleventyNavigation` property to the frontmatter. This is an example of the property in use on the About page `/content/pages/about.md`:
+The RSS page’s `layout` must be set to `feed` in the frontmatter. The RSS page supports only the `layout` and `title` [basic properties](#basic-properties).
 
-```yaml
----
-layout: default
-title: About
-eleventyNavigation:
-  key: About
-  order: 0
----
-
-```
-
-This tells Eleventy to add this page to the navigation with the text “About” ordered first.
-
-If you want to add an external link to the navigation, you can create a new Markdown file (for example, `/content/external.md`) with the below frontmatter:
-
-```yaml
----
-eleventyNavigation:
-  key: Twitter
-  url: https://twitter.com/piperhaywood
-permalink: false
----
-
-```
-
-This would add a Twitter link to the navigation. The `permalink` property tells Eleventy that we don’t want it to result in a new page.
+The RSS feed is automatically published to `/feed.xml`, so for example `https://yoursite.com/feed.xml`. If you want to add an RSS link in your navigation, see the [navigation properties](#navigation-properties) guidance to add an external link.
 
 ## Media
 
@@ -317,20 +334,28 @@ Small images should be around 800px wide, medium images should be around 1400px 
 
 The more images you add to a page, the longer it will take for that page to load. Be judicious about how many images you add to any one page.
 
+## Troubleshooting
+
+TODO
+
+Images are broken
+
+Links are broken
+
 ## Altering and extending your site
 
 As mentioned above, this is a deliberately basic codebase that welcomes tinkering.
 
-Smaller customisations such as altering the CSS can be without the command line by editing the CSS file directly in GitHub. More extensive customisations are best done by developing locally with the command line. Refer to the [Eleventy documentation] if you are interested in altering the templates within `/_includes`.
+Smaller customisations such as altering the CSS can be done without the command line by editing the CSS file directly in GitHub. More extensive customisations are best done by developing locally with the command line. Refer to the [Eleventy documentation](https://www.11ty.dev/docs/) if you are interested in altering the [`/_includes`](/_includes) layouts or snippets.
 
 These are a few suggestions for altering and extending this site:
 
 - Edit the CSS to change the fonts or background colours
   – Alter the templates to work with a content delivery network (CDN) such as [`imgix`](https://www.imgix.com/) so that your media doesn’t live on GitHub
 - Add your projects to AirTable and use their API to populate your website
-- Hook your site up to a content management system (CMS) like [Forestry](#) or [Sanity](#)
+- Hook your site up to a content management system (CMS) like [Forestry](https://forestry.io/) or [Sanity](https://www.sanity.io/)
 
-If you’re interested in our help, just [get in touch](#) and we’ll discuss options.
+If you’re interested in our help, just [get in touch](mailto:mail@sb-ph.com) and we’ll discuss!
 
 ## Colophon
 
