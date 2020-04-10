@@ -4,36 +4,34 @@ This is a lightweight portfolio starterkit built with [Eleventy](https://www.11t
 
 The intended user may not know any code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to learn via documentation.
 
-- Features
-- Getting Started
-  - No-code setup
-    1. Get a GitHub account
-    2. Get an account with a static hosting provider
-    3. Deploy your website
-    4. Edit content in GitHub
-  - Command line setup
-    1. Set up repo locally and on GitHub
-    2. Build or serve your website
-    3. Deploy your website
-    4. Edit content locally
-  - Use a custom domain with your static hosting
-  - Updates and backups
-  - Editing content
-    - Global data
-    - Markdown files
-      - Basic properties
-      - Navigation properties
-      - Pages
-      - Posts
-      - Projects
-      - Homepage
-      - Blog page (“Posts”)
-      - Error
-      - RSS feed
-    - Media
-  - Troubleshooting
-  - Altering and extending your site
-  - Colophon
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [No-code setup](#no-code-setup)
+    1. [Get a GitHub account](#1-get-a-github-account)
+    2. [Get an account with a static hosting provider](#2-get-an-account-with-a-static-hosting-provider)
+    3. [Deploy your website](#3-deploy-your-website)
+    4. [Edit content in GitHub](#4-edit-content-in-github)
+  - [Command line setup](#command-line-setup)
+    1. [Set up repo locally and on GitHub](#1-set-up-your-repository)
+    2. [Build or serve your website](#2-build-or-serve-your-website)
+    3. [Deploy your website](#3-deploy-your-website)
+    4. [Edit content locally](#4-edit-content-locally)
+- [Using a custom domain](#using-a-custom-domain)
+- [Updates and backups](#updates-and-backup)
+- [Editing content](#editing-content)
+  - [Global data](#global-data)
+  - [Markdown files](#markdown-files)
+    - [Basic properties](#basic-properties)
+    - [Navigation properties](#navigation-properties)
+    - [Pages](#pages)
+    - [Posts](#posts)
+    - [Projects](#projects)
+    - [Homepage](#homepage)
+    - [Blog page](#blog-page)
+    - [Error page](#error-page)
+    - [RSS feed](#rss-feed)
+  - [Media](#media)
+- [Altering and extending your site](#altering-or-extending-your-site)
 
 ## Features
 
@@ -69,8 +67,6 @@ If you have a ZEIT account:
 
 [![Deploy with ZEIT](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/sb-ph/portfolio-starter)
 
-TODO add info about what happens next
-
 #### 4. Edit content in GitHub
 
 To edit or add content without the command line, you need to use GitHub’s interface to navigate your files within the [`/content`](/content) folder in your repository. See the [content editing documentation](#editing-content) to learn more about the structure of the `/content` folder and each of the files within it, particularly the [global data](#global-data) file that includes your website title and URL.
@@ -87,7 +83,7 @@ To save edits or additions made in GitHub, you must commit your changes using Gi
 
 The command line setup instructions assume that you have familiarity with the command line, that you have version 8 or higher of Node.js installed on your computer, and that you have a GitHub account.
 
-#### 1. Set up repo locally and on GitHub
+#### 1. Set up your repository
 
 Clone repository locally into a named project folder by running `git clone https://github.com/sb-ph/portfolio-starter.git my-website` and then change to the new project folder by running `cd my-website`. Run `npm install` to install the dependencies including Eleventy.
 
@@ -105,7 +101,7 @@ If you want to use Netlify or ZEIT, follow their documentation to get your repos
 
 To edit content locally, spin up a server by running `npx @11ty/eleventy --serve` and then adjust the Markdown and JSON files within the `/content` directory. If your site is hooked up to continuous deployment, make sure you commit your changes to the right branch (probably `master`) otherwise they will not be deployed.
 
-## Use a custom domain with your static hosting
+## Using a custom domain
 
 Netlify and ZEIT give you a default subdomain automatically when you deploy your website, so this is an optional step. If you want to use your own domain, you should follow their instructions to set this up. [Read more about custom domains on ZEIT](https://zeit.co/docs/v2/custom-domains), or [read more about custom domains on Netlify](https://docs.netlify.com/domains-https/custom-domains/).
 
@@ -316,13 +312,16 @@ The media property is a strictly-formatted YAML list that can contain image and 
 | `size`       | text     | `lg`    | The size that the media should be displayed; `sm`, `md`, or `lg` |
 | `type`\*     | text     | -       | `image` or `video`                                               |
 
-Image blocks require one additional property:
+Image blocks support the following additional properties:
 
-| Property | Format | Default | Description                 |
-| -------- | ------ | ------- | --------------------------- |
-| `alt`\*  | text   | -       | The alt text for your image |
+| Property   | Format  | Default | Description                                                       |
+| ---------- | ------- | ------- | ----------------------------------------------------------------- |
+| `alt`\*    | text    | -       | The alt text for your image                                       |
+| `featured` | boolean | false   | Whether or not the image should be used to represent this project |
 
-And video blocks allow the following additional properties. Note that video autoplay is only supported in certain browsers and devices.
+The `featured` property is used to determine which image should be used to represent this project on the homepage. If multiple images are marked as featured, then the first one will be used.
+
+Video blocks allow the following additional properties. Note that video autoplay is only supported in certain browsers and devices.
 
 | Property   | Format  | Default | Description                                           |
 | ---------- | ------- | ------- | ----------------------------------------------------- |
@@ -333,15 +332,30 @@ And video blocks allow the following additional properties. Note that video auto
 
 #### Homepage
 
+The homepage is the [`/content/index.md`](/content/index.md) file.
+
+The homepage’s `layout` must be set to `home` in the frontmatter. The homepage supports the [basic properties](#basic-properties) and [navigation properties](#navigation-properties) as well as the optional `entries` property.
+
+The `entries` property allows you to specify exactly which projects you want to appear on the homepage. If the `entries` property is not filled out, then the homepage will automatically display all of the projects in order with the most recent first.
+
+This is an example of the `entries` property in use:
+
+```yaml
+---
+TODO
+---
+
+```
+
 TODO
 
-#### Blog page (“Posts”)
+#### Blog page
 
 The blog page is the [`/content/posts.md`](/content/posts.md) file.
 
 The blog page’s `layout` must be set to `posts` in the frontmatter. The blog page supports the [basic properties](#basic-properties) and [navigation properties](#navigation-properties). Markdown written beneath the frontmatter is not displayed.
 
-#### Error
+#### Error page
 
 The 404 error page is the [`/content/404.md`](/content/404.md) file.
 
@@ -374,7 +388,10 @@ Smaller customisations such as altering the CSS can be done without the command 
 These are a few suggestions for altering and extending this site:
 
 - Edit the CSS to change the fonts or background colours
-  – Alter the templates to work with a content delivery network (CDN) such as [`imgix`](https://www.imgix.com/) so that your media doesn’t live on GitHub
+- Add filtering by tag to the blog
+- Add project attributes such as `client` or `category`
+- Add a Projects page that displays a list of all projects
+- Alter the templates to work with a content delivery network (CDN) such as [`imgix`](https://www.imgix.com/) so that your media doesn’t live on GitHub
 - Add your projects to AirTable and use their API to populate your website
 - Hook your site up to a content management system (CMS) like [Forestry](https://forestry.io/) or [Sanity](https://www.sanity.io/)
 
