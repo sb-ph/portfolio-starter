@@ -365,19 +365,11 @@ Small images should be around 800px wide, medium images should be around 1400px 
 
 The more images you add to a page, the longer it will take for that page to load. Be judicious about how many images you add to any one page.
 
-## Troubleshooting
-
-TODO
-
-Images are broken
-
-Links are broken
-
 ## Altering and extending your site
 
 As mentioned above, this is a deliberately basic codebase that welcomes tinkering.
 
-Smaller customisations such as altering the CSS can be done without the command line by editing the CSS file directly in GitHub. More extensive customisations are best done by developing locally with the command line. Refer to the [Eleventy documentation](https://www.11ty.dev/docs/) if you are interested in altering the [`/_includes`](/_includes) layouts or snippets.
+Smaller customisations such as altering the CSS can be done without the command line by editing the CSS file directly in GitHub. More extensive customisations are best done by developing locally with the command line. Refer to the [Eleventy documentation](https://www.11ty.dev/docs/) if you are interested in altering the [Nunjucks](https://mozilla.github.io/nunjucks/) layouts or snippets in [`/_includes`](/_includes).
 
 These are a few suggestions for altering and extending this site:
 
@@ -387,7 +379,3 @@ These are a few suggestions for altering and extending this site:
 - Hook your site up to a content management system (CMS) like [Forestry](https://forestry.io/) or [Sanity](https://www.sanity.io/)
 
 If you’re interested in our help, just [get in touch](mailto:mail@sb-ph.com) and we’ll discuss!
-
-## Colophon
-
-TODO
