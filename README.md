@@ -2,7 +2,7 @@
 
 This is a lightweight portfolio starterkit built with [Eleventy](https://www.11ty.dev/). It is geared towards designers, illustrators, architects, and any other individuals who are interested in sharing their work and activity.
 
-The intended user may not know any code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to follow along with this documentation.
+The intended user may not how to code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to follow along with this documentation.
 
 For an example of the Portfolio Starter in use, see the demo site [portfolio-starter.sb-ph.com](https://portfolio-starter.sb-ph.com/). The code within this repository drives the demo site.
 
@@ -18,19 +18,19 @@ For an example of the Portfolio Starter in use, see the demo site [portfolio-sta
     - [2. Build or serve your website](#2-build-or-serve-your-website)
     - [3. Deploy your website](#3-deploy-your-website)
     - [4. Edit content locally](#4-edit-content-locally)
-- [Using a custom domain](#using-a-custom-domain)
+  - [Using a custom domain](#using-a-custom-domain)
 - [Updates and backups](#updates-and-backup)
-- [Editing content](#editing-content)
+- [Content reference](#content-reference)
   - [Global data](#global-data)
   - [Markdown files and YAML frontmatter](#markdown-files-and-yaml-frontmatter)
-    - [Basic properties](#basic-properties)
-    - [Pages](#pages)
-    - [Posts](#posts)
-    - [Projects](#projects)
-    - [Homepage](#homepage)
-    - [Blog page](#blog-page)
-    - [Error page](#error-page)
-    - [RSS feed](#rss-feed)
+  - [Basic properties](#basic-properties)
+  - [Pages](#pages)
+  - [Posts](#posts)
+  - [Projects](#projects)
+  - [Homepage](#homepage)
+  - [Blog page](#blog-page)
+  - [Error page](#error-page)
+  - [RSS feed](#rss-feed)
   - [Media](#media)
 - [Altering and extending your site](#altering-or-extending-your-site)
 
@@ -72,7 +72,7 @@ If you have a ZEIT account:
 
 #### 4. Edit content in GitHub
 
-To edit or add content without the command line, you need to use GitHub’s interface to navigate your files within the [`/content`](/content) folder in your repository. See the [content editing documentation](#editing-content) to learn more about the structure of the `/content` folder and each of the files within it, particularly the [global data](#global-data) file that includes your website title and URL.
+To edit or add content without the command line, you need to use GitHub’s interface to navigate your files within the [`/content`](/content) folder in your repository. See the [content reference](#content-reference) to learn more about the structure of the `/content` folder and each of the files within it, particularly the [global data](#global-data) file that includes your website title and URL.
 
 To edit or delete an existing file, you must open the relevant file in GitHub and then click either the Edit button (the button with the pencil icon) or the Delete button (the button with the bin) in the upper-right corner above the page contents.
 
@@ -104,7 +104,7 @@ If you want to use Netlify or ZEIT, follow their documentation to get your repos
 
 To edit content locally, spin up a server by running `npx @11ty/eleventy --serve` and then adjust the Markdown and JSON files within the `/content` directory. If your site is hooked up to continuous deployment, make sure you commit your changes to the right branch (probably `master`) otherwise they will not be deployed.
 
-## Using a custom domain
+### Using a custom domain
 
 Netlify and ZEIT give you a default subdomain automatically when you deploy your website, so this is an optional step. If you want to use your own domain, you should follow their instructions to set this up. [Read more about custom domains on ZEIT](https://zeit.co/docs/v2/custom-domains), or [read more about custom domains on Netlify](https://docs.netlify.com/domains-https/custom-domains/).
 
@@ -120,7 +120,7 @@ If you’re on an older version of Portfolio Starter and want to update it to a 
 
 Regardless, you should back up your website before making any updates or major changes. Visit your repository homepage and click the green “Clone or download” button to download a zipped file of the entire repository, then store it somewhere safe.
 
-## Editing content
+## Content reference
 
 All of the content lives in the [`/content`](/content) folder. This includes the [global data](#global-data), [Markdown files for each page](#markdown-files-and-yaml-frontmatter), and [media](#media). It is important to format and organise each of these files in a particular way so that your site deploys without errors and looks as expected.
 
@@ -181,7 +181,7 @@ image: cloud-01.jpeg
 
 The YAML frontmatter includes a series of properties&mdash;keys and values separated by a colon&mdash;that define page-specific metadata. Keys must always be written exactly as shown in this documentation. Writing `Layout` instead of `layout` for example will result in an error.
 
-#### Basic properties
+### Basic properties
 
 These are the basic YAML properties that should be used in the frontmatter on every page.
 
@@ -234,13 +234,13 @@ permalink: false
 
 The `key` sub-property tells Eleventy to add this page to the navigation with the text “GitHub ” (`&nearr;` is the HTML code for a northeast arrow). The `order` sub-property is set to 3 so that it comes last in the menu, and the `url` sub-property is set to the desired URL. The `permalink` property is set to false so that this doesn’t publish a corresponding page on our website.
 
-#### Pages
+### Pages
 
 Pages are found in the [`/content/pages`](/content/pages) folder.
 
 A page’s `layout` must be set to `page` in the frontmatter. Pages support only the [basic properties](#basic-properties) listed above.
 
-#### Posts
+### Posts
 
 Posts are found in the [`/content/posts`](/content/posts) folder.
 
@@ -269,7 +269,7 @@ Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullam
 
 If you use the `more` comment, only the text preceding the comment will be displayed on the blog and a “Read more” link will be displayed after this excerpt.
 
-#### Projects
+### Projects
 
 Projects are found in the [`/content/projects`](/content/projects) folder.
 
@@ -332,7 +332,7 @@ Video blocks allow the following additional properties. Note that video autoplay
 | `autoplay` | boolean | false   | Whether or not the video should automatically play    |
 | `muted`    | boolean | false   | Whether or not the video should be muted              |
 
-#### Homepage
+### Homepage
 
 The homepage is the [`/content/index.md`](/content/index.md) file.
 
@@ -351,19 +351,19 @@ TODO
 
 TODO
 
-#### Blog page
+### Blog page
 
 The blog page is the [`/content/posts.md`](/content/posts.md) file.
 
 The blog page’s `layout` must be set to `posts` in the frontmatter. The blog page supports the [basic properties](#basic-properties). Markdown written beneath the frontmatter is not displayed.
 
-#### Error page
+### Error page
 
 The 404 error page is the [`/content/404.md`](/content/404.md) file.
 
 The 404 error page’s `layout` must be set to `error` in the frontmatter. The error page supports only the `layout` and `title` [basic properties](#basic-properties). The `permalink` property must not be used.
 
-#### RSS feed
+### RSS feed
 
 The RSS page is the [`/content/rss.md`](/content/rss.md) file.
 
