@@ -4,6 +4,37 @@ This is a lightweight portfolio starterkit built with [Eleventy](https://www.11t
 
 The intended user may not know any code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to learn via documentation.
 
+- Features
+- Getting Started
+  - No-code setup
+    1. Get a GitHub account
+    2. Get an account with a static hosting provider
+    3. Deploy your website
+    4. Edit content in GitHub
+  - Command line setup
+    1. Set up repo locally and on GitHub
+    2. Build or serve your website
+    3. Deploy your website
+    4. Edit content locally
+  - Use a custom domain with your static hosting
+  - Updates and backups
+  - Editing content
+    - Global data
+    - Markdown files
+      - Basic properties
+      - Navigation properties
+      - Pages
+      - Posts
+      - Projects
+      - Homepage
+      - Blog page (“Posts”)
+      - Error
+      - RSS feed
+    - Media
+  - Troubleshooting
+  - Altering and extending your site
+  - Colophon
+
 ## Features
 
 - Understated design with an eye towards accessibility [TODO]
@@ -26,7 +57,7 @@ GitHub is a platform that stores code. Your website code and content are going t
 
 [Netlify](https://www.netlify.com/) and [ZEIT](https://zeit.co/) are hosting providers that offer generous free tiers for people with static websites such as this. If you have an account with either of these platforms already, log in. If you don’t, sign up for one.
 
-#### 3. Deploy this website
+#### 3. Deploy your website
 
 By clicking one of the buttons below, you will fork this repository (i.e. create a duplicate version that lives in your own GitHub account) and then deploy this new website to your static hosting.
 
@@ -62,11 +93,11 @@ Clone repository locally into a named project folder by running `git clone https
 
 Run `rm -rf .git` to remove the Git history for a fresh start, and then run `git init` to initialise a new git repo. Commit all of your files to create a new `master` branch, and then [add your project to GitHub using the command line](https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line).
 
-#### 2. Build or serve website
+#### 2. Build or serve your website
 
 To build the website in to the gitignored `/_site` directory, run `npx @11ty/eleventy`. To spin up a server for local development or content editing, run `npx @11ty/eleventy --serve`.
 
-#### 3. Deploy website
+#### 3. Deploy your website
 
 If you want to use Netlify or ZEIT, follow their documentation to get your repository hooked up to your hosting account for continuous deployment. If you want to use another hosting provider, you can find your static files in the `/_site` directory after you generate a build.
 
