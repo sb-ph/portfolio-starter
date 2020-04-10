@@ -76,6 +76,31 @@ module.exports = function (config) {
     });
     return pages.length ? pages[0] : false;
   });
+  config.addFilter("getPagesByPaths", (collection, paths) => {
+    let pages = [];
+    paths.forEach((path) => {
+      let page = collection.filter((page) => {
+        return page.filePathStem.includes(path) ? page : false;
+      });
+      if (page.length) {
+        pages.push(page[0]);
+      }
+    });
+    return pages;
+  });
+  config.addFilter("getFeaturedImage", (blocks) => {
+    // Get the featured images
+    let images = blocks.filter((block) => {
+      return block.type == "image" && block.featured ? block : false;
+    });
+    // If no featured images, get all the images
+    if (!images.length) {
+      images = blocks.filter((block) => {
+        return block.type == "image" ? block : false;
+      });
+    }
+    return images.length ? images[0] : false;
+  });
 
   // Collections
   config.addCollection("projects", (collection) => {

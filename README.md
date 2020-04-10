@@ -344,12 +344,19 @@ This is an example of the `entries` property in use:
 
 ```yaml
 ---
-TODO
+layout: home
+entries:
+  - portfolio-starter
+  - sample-project-muybridge
+  - sample-project-optics
+  - sample-project-eames
+  - sample-project-letters
+  - sample-project-traffic-signs
 ---
 
 ```
 
-TODO
+The first `featured` image for each project is shown. If no images are `featured`, then the first image will be shown.
 
 ### Blog page
 

@@ -7,26 +7,41 @@ permalink: "/"
   {{ content | safe }}
 </div>
 
-{# TODO Hook up featured images, custom homepage order #}
+{% set entries = collections.all | getPagesByPaths(entries) if entries else collections.entrys %}
 
-{% for project in collections.projects %}
-  {% if project.data.media %}
-    {% set block = project.data.media[0] %}
-    {% set blockClasses = block.size if block.size else 'md' %}
+{# For each of the entries #}
+{% for entry in entries %}
+
+  {# Set the defaults #}
+  {% set image = false %}
+  {% set width = false %}
+  {% set height = false %}
+  {% set blockClasses = 'md' %}
+
+  {# If the entry has media #}
+  {% if entry.data.media %}
+    {# Get the first featured image block #}
+    {% set block = entry.data.media | getFeaturedImage %}
+    {% if block %}
+      {% set blockClasses = block.size if block.size %}
+      {% set image = block.filename | urlencode %}
+      {% set width = block.width if block.width else false %}
+      {% set height = block.height if block.height else false %}
+    {% endif %}
+  {% endif %}
+
+  {# If there is an image we can use #}
+  {% if image %}
     <article class="home-block {{ blockClasses }}">
-      <a href="{{ project.url }}">
-        {% if block.type == 'image' %}
-          {# TODO what if not image? Need fallback? #}
-          {% set image = block.filename | urlencode %}
-          <img
-            loading="lazy"
-            src="/media/{{ image }}"
-            alt=""
-            {% if block.width %}width="{{ block.width }}"{% endif %}
-            {% if block.height %}height="{{ block.height }}"{% endif %}
-          >
-        {% endif %}
-        <h2 class="home-block-title">{{ project.data.title | safe }}</h2>
+      <a href="{{ entry.url }}">
+        <img
+          loading="lazy"
+          src="/media/{{ image }}"
+          alt=""
+          {% if width %}width="{{ width }}"{% endif %}
+          {% if height %}height="{{ height }}"{% endif %}
+        >
+        <h2 class="home-block-title">{{ entry.data.title | safe }}</h2>
       </a>
     </article>
   {% endif %}
