@@ -12,6 +12,12 @@ permalink: "/"
 {% for project in collections.projects %}
   {% if project.data.media %}
     {% set block = project.data.media[0] %}
+    {% for mediaBlock in project.data.media %}
+      {# TODO this could probably be improved… #}
+      {% if mediaBlock.featured %}
+        {% set block = project.data.media[loop.index0] %}
+      {% endif %}
+    {% endfor %}
     {% set blockClasses = block.size if block.size else 'md' %}
     <article class="home-block {{ blockClasses }}">
       <a href="{{ project.url }}">
