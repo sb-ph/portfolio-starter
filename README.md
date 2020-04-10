@@ -6,25 +6,11 @@ The intended user may not know any code but is interested in the tech behind the
 
 ## Features
 
-### Design and accessibility
-
-TODO
-
-### Deliberately basic codebase
-
-We’ve kept the codebase deliberately basic to encourage tinkering and customisation even for people that are unfamiliar with code. There are no build systems like Gulp or Webpack, and there are no JavaScript libraries like Vue or React.
-
-### Generates a static site
-
-Static websites tend to load a lot faster than database-driven websites, and they can often be hosted for free with hosting providers such as Netlify or Now.
-
-### Supports RSS
-
-TODO
-
-### Command line not required
-
-You don’t have to use a code editor or the command line to edit or even deploy this website. [Read more about how to create a new Portfolio Starter website in GitHub and deploy it](#TODO) all without leaving your browser.
+- Understated design with an eye towards accessibility [TODO]
+- A deliberately basic codebase that encourages tinkering and customisation even for people unfamiliar with code
+- Generates a static site; static sites tend to load a lot faster than database-driven websites and can be hosted for free
+- Supports RSS out of the box
+- Command line not required; you don’t have to use a code editor or the command line to edit or even deploy this website
 
 ## Getting Started
 
