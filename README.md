@@ -18,6 +18,10 @@ We’ve kept the codebase deliberately basic to encourage tinkering and customis
 
 Static websites tend to load a lot faster than database-driven websites, and they can often be hosted for free with hosting providers such as Netlify or Now.
 
+### Supports RSS
+
+TODO
+
 ### Command line not required
 
 You don’t have to use a code editor or the command line to edit or even deploy this website. [Read more about how to create a new Portfolio Starter website in GitHub and deploy it](#TODO) all without leaving your browser.
