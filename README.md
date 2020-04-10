@@ -2,20 +2,20 @@
 
 This is a lightweight portfolio starterkit built with [Eleventy](https://www.11ty.dev/). It is geared towards designers, illustrators, architects, and any other individuals who are interested in sharing their work and activity.
 
-The intended user may not know any code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to learn via documentation.
+The intended user may not know any code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to follow along with this documentation.
 
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [No-code setup](#no-code-setup)
-    1. [Get a GitHub account](#1-get-a-github-account)
-    2. [Get an account with a static hosting provider](#2-get-an-account-with-a-static-hosting-provider)
-    3. [Deploy your website](#3-deploy-your-website)
-    4. [Edit content in GitHub](#4-edit-content-in-github)
+    - [1. Get a GitHub account](#1-get-a-github-account)
+    - [2. Get an account with a static hosting provider](#2-get-an-account-with-a-static-hosting-provider)
+    - [3. Deploy your website](#3-deploy-your-website)
+    - [4. Edit content in GitHub](#4-edit-content-in-github)
   - [Command line setup](#command-line-setup)
-    1. [Set up repo locally and on GitHub](#1-set-up-your-repository)
-    2. [Build or serve your website](#2-build-or-serve-your-website)
-    3. [Deploy your website](#3-deploy-your-website)
-    4. [Edit content locally](#4-edit-content-locally)
+    - [1. Set up repo locally and on GitHub](#1-set-up-your-repository)
+    - [2. Build or serve your website](#2-build-or-serve-your-website)
+    - [3. Deploy your website](#3-deploy-your-website)
+    - [4. Edit content locally](#4-edit-content-locally)
 - [Using a custom domain](#using-a-custom-domain)
 - [Updates and backups](#updates-and-backup)
 - [Editing content](#editing-content)
@@ -46,6 +46,8 @@ The intended user may not know any code but is interested in the tech behind the
 To get started, you can go down the [no-code setup](#no-code-setup) route if you don’t want to deal with the command line and would prefer to GitHub’s interface, or you can do the [command line setup](#command-line-setup).
 
 ### No-code setup
+
+“No-code” is a _little_ bit of a misnomer. Your content files are technically written in code, but it is a very readable syntax called Markdown (more on this later). What we mean by “no-code” is that you won’t have to touch the command line, Git, or open a code editor on your computer.
 
 #### 1. Get a GitHub account
 
