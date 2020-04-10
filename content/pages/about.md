@@ -6,6 +6,8 @@ eleventyNavigation:
   order: 1
 ---
 
-A starter kit for static portfolio sites. Lightweight, customisable, open source. It is geared towards designers, illustrators, architects, all sorts of individuals who are interested in sharing images of their work and news / posts online. It isn’t quite ready yet but will be available soon.
+This is a lightweight portfolio starter kit by [Sam Baldwin](https://sambaldwin.info) and [Piper Haywood](https://piperhaywood.com). The thinking behind it comes from a decade of experience designing and building portfolios for designers, illustrators, architects, and other people that want to share their work and activity online.
 
-The intended user may not know any code but is interested in the tech underlying their website, is willing to write in Markdown, and is happy to follow a tutorial or two. It can be used as-is and deployed without touching any code, or it can be used as a jumping off point for further customisation if you’re willing to get your hands dirty with a little HTML and CSS.
+Portfolio Starter is lightweight and open source. The intended user may not know how to code but is interested in the tech behind their website, is willing to write in Markdown, and is happy to follow a few instructions. The codebase is deliberately basic to encourage tinkering and customisation for everyone, including a beginner that is just beginning to learn why `alt` text is important (hint: it’s really important). Since it uses the static site generator [Eleventy](https://www.11ty.dev/), Portfolio Starter can be hooked up to free static hosting providers such as Netlify or ZEIT Now.
+
+[Check out the documentation](https://github.com/sb-ph/portfolio-starter) to start experimenting, you can get a website online with the click of a few buttons. If you give it a try, [let us know](mailto:mail@sb-ph.com)! We’d love to see how people use it and where they take it.

@@ -2,7 +2,7 @@
 
 This is a lightweight portfolio starterkit built with [Eleventy](https://www.11ty.dev/). It is geared towards designers, illustrators, architects, and any other individuals who are interested in sharing their work and activity.
 
-The intended user may not how to code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to follow along with this documentation.
+The intended user may not know how to code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to follow along with this documentation.
 
 For an example of the Portfolio Starter in use, see the demo site [portfolio-starter.sb-ph.com](https://portfolio-starter.sb-ph.com/). The code within this repository drives the demo site.
 
@@ -94,7 +94,7 @@ Run `rm -rf .git` to remove the Git history for a fresh start, and then run `git
 
 #### 2. Build or serve your website
 
-To build the website in to the gitignored `/_site` directory, run `npx @11ty/eleventy`. To spin up a server for local development or content editing, run `npx @11ty/eleventy --serve`.
+To build the website in to the gitignored `/_site` directory, run `npx @11ty/eleventy`. To spin up a server for local development or content editing, run `npx @11ty/eleventy --serve`. This will make your site available at <http://localhost:8080>, and the site will automatically reload when you make any changes.
 
 #### 3. Deploy your website
 
@@ -398,4 +398,4 @@ These are a few suggestions for altering and extending this site:
 - Add your projects to AirTable and use their API to populate your website
 - Hook your site up to a content management system (CMS) like [Forestry](https://forestry.io/) or [Sanity](https://www.sanity.io/)
 
-If you’re interested in our help, just [get in touch](mailto:mail@sb-ph.com) and we’ll discuss!
+If you’re interested in our help making some modifications, just [get in touch](mailto:mail@sb-ph.com) and we’ll discuss!
