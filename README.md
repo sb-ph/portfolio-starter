@@ -4,6 +4,8 @@ This is a lightweight portfolio starterkit built with [Eleventy](https://www.11t
 
 The intended user may not know any code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to follow along with this documentation.
 
+For an example of the Portfolio Starter in use, see the demo site [portfolio-starter.sb-ph.com](https://portfolio-starter.sb-ph.com/). The code within this repository drives the demo site.
+
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [No-code setup](#no-code-setup)
@@ -20,9 +22,8 @@ The intended user may not know any code but is interested in the tech behind the
 - [Updates and backups](#updates-and-backup)
 - [Editing content](#editing-content)
   - [Global data](#global-data)
-  - [Markdown files](#markdown-files)
+  - [Markdown files and YAML frontmatter](#markdown-files-and-yaml-frontmatter)
     - [Basic properties](#basic-properties)
-    - [Navigation properties](#navigation-properties)
     - [Pages](#pages)
     - [Posts](#posts)
     - [Projects](#projects)
@@ -73,7 +74,7 @@ If you have a ZEIT account:
 
 To edit or add content without the command line, you need to use GitHub’s interface to navigate your files within the [`/content`](/content) folder in your repository. See the [content editing documentation](#editing-content) to learn more about the structure of the `/content` folder and each of the files within it, particularly the [global data](#global-data) file that includes your website title and URL.
 
-To edit a page, you must open the relevant file in GitHub and then click the Edit button (the button with the pencil icon) in the upper-right corner above the page contents.
+To edit or delete an existing file, you must open the relevant file in GitHub and then click either the Edit button (the button with the pencil icon) or the Delete button (the button with the bin) in the upper-right corner above the page contents.
 
 If you want to add a new page, you must navigate to the [`posts`](/content/posts), [`projects`](/content/projects), or [`pages`](/content/pages) folder depending on what you want to add and then click the “Create new file” button near the top of the page. This will open a new editor page where you can add your filename and file contents. Since all text content is written in Markdown, the filename must end in `md` (i.e. `my-post-name.md`).
 
@@ -121,7 +122,7 @@ Regardless, you should back up your website before making any updates or major c
 
 ## Editing content
 
-All of the content lives in the [`/content`](/content) folder. This includes the [global data](#global-data), [Markdown files for each page](#markdown-files), and [media](#media). It is important to format and organise each of these files in a particular way so that your site deploys without errors and looks as expected.
+All of the content lives in the [`/content`](/content) folder. This includes the [global data](#global-data), [Markdown files for each page](#markdown-files-and-yaml-frontmatter), and [media](#media). It is important to format and organise each of these files in a particular way so that your site deploys without errors and looks as expected.
 
 ### Global data
 
@@ -147,18 +148,20 @@ This is the only piece of content that must be written in JSON, a text format th
 
 These are the properties in more detail.
 
-| Property   | Format      | Default | Description                                                                                                                           |
-| ---------- | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `author`   | JSON object | -       | A JSON object that includes the name and email address of the website author                                                          |
-| `footer`   | Markdown    | -       | The footer text written in Markdown                                                                                                   |
-| `lang`\*   | text        | `en`    | The [IANA language tag](https://www.w3.org/International/questions/qa-html-language-declarations) that declares your website language |
-| `subtitle` | text        | -       | A short string that describes your website                                                                                            |
-| `title`\*  | text        | -       | The title of your website                                                                                                             |
-| `url`\*    | url         | -       | Your website URL                                                                                                                      |
+| Key        | Format      | Default        | Description                                                                                                                           |
+| ---------- | ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `author`   | JSON object | -              | A JSON object that includes the name and email address of the website author                                                          |
+| `footer`   | Markdown    | a short credit | The footer text written in Markdown                                                                                                   |
+| `lang`\*   | text        | `en`           | The [IANA language tag](https://www.w3.org/International/questions/qa-html-language-declarations) that declares your website language |
+| `subtitle` | text        | -              | A short string that describes your website                                                                                            |
+| `title`\*  | text        | -              | The title of your website                                                                                                             |
+| `url`\*    | url         | -              | Your website URL                                                                                                                      |
 
-### Markdown files
+The footer includes a short credit by default. Feel free to replace it with whatever text works best for you. This might include a copyright notice, a colophon, contact details or other salient information. The footer does not support line breaks.
 
-All of the main content pages including the posts, projects, pages, homepage, 404 error page, blog, and RSS feed are written in [Markdown](https://daringfireball.net/projects/markdown/). Markdown allows you to write using an easy-to-read, easy-to-write plain text format that can be converted to valid HTML. Visit the [markdown-it](https://markdown-it.github.io/) website for a full list of formatting options including lists, links, headings, and more. You can also take a look at the source for this README file; it’s written in Markdown too!
+### Markdown files and YAML frontmatter
+
+All of the main content pages including the [posts](#posts), [projects](#projects), [pages](#pages), [homepage](#homepage), [404 error page](#error), [blog](#blog-page), and [RSS feed](#rss-feed) are written in [Markdown](https://daringfireball.net/projects/markdown/). Markdown allows you to write using an easy-to-read, easy-to-write plain text format that can be converted to valid HTML. Visit the [markdown-it](https://markdown-it.github.io/) website for a full list of formatting options including lists, links, headings, and more. You can also take a look at the source for this README file; it’s written in Markdown too!
 
 All Markdown files end in the `.md` extension, and this starterkit uses the rest of the filename to generate the page slug (the final part of a page’s URL).
 
@@ -176,33 +179,30 @@ image: cloud-01.jpeg
 
 ```
 
-The YAML frontmatter defines page-specific metadata such as the page title, the page description, and the layout.
+The YAML frontmatter includes a series of properties&mdash;keys and values separated by a colon&mdash;that define page-specific metadata. Keys must always be written exactly as shown in this documentation. Writing `Layout` instead of `layout` for example will result in an error.
 
 #### Basic properties
 
-These are the basic YAML properties that should be used on every page.
+These are the basic YAML properties that should be used in the frontmatter on every page.
 
-| Property      | Format | Default | Description                                                                           |
-| ------------- | ------ | ------- | ------------------------------------------------------------------------------------- |
-| `description` | text   | -       | Description of the page that is used for social media cards and search engine results |
-| `image`       | text   | -       | The filename of the image that should be used for social media cards                  |
-| `layout`\*    | text   | -       | The page layout                                                                       |
-| `permalink`   | text   | various | The page permalink                                                                    |
-| `title`\*     | text   | -       | The page title                                                                        |
+| Key                  | Format | Default | Description                                                          |
+| -------------------- | ------ | ------- | -------------------------------------------------------------------- |
+| `description`        | text   | -       | Short description of the page contents                               |
+| `eleventyNavigation` | YAML   | -       | A YAML object, described below                                       |
+| `image`              | text   | -       | The filename of the image that should be used for social media cards |
+| `layout`\*           | text   | -       | The page layout                                                      |
+| `permalink`          | text   | various | The page permalink                                                   |
+| `title`\*            | text   | -       | The page title                                                       |
 
 The page title and layout are required on every Markdown file. The page layout determines how the content is displayed. When creating new pages, you should use the `project`, `post`, or `page` layouts.
 
-If using an `image` for social media, refer to the documentation provided by the social media platforms for guidance about an appropriate image size. As a rule of thumb, 1200px wide should be appropriate and landscape works best across most platforms.
+The `description` property is highly recommended for all pages since it is used for social media cards and displayed in search engine results. It should be between 50 and 160 characters, and it should never be duplicated across different pages.
 
-The page permalink is generated automatically depending on the layout. If you want to override it on any particular page, you can do so by setting the `permalink` property. The homepage, RSS, and error page permalinks should never be changed.
+If using an `image` for social media, refer to the documentation provided by the social media platforms for guidance about an appropriate image size. As a rule of thumb, a landscape-format 1200px wide JPG should be appropriate across most platforms.
 
-There is one more basic property available across all pages that pertains to navigation and is described in more detail below.
+The `permalink` property allows you to set the URL for a page or to turn it off completely. The permalinks are always generated automatically, so you should rarely need to use this property.
 
-#### Navigation properties
-
-This site uses the Eleventy [Navigation Plugin](https://www.11ty.dev/docs/plugins/navigation/) to generate a simple, one-level menu.
-
-By default, the menu is set to include the About page and the Posts feed. To add a page to the menu, you must add the `eleventyNavigation` property to that page’s frontmatter. This is an example of the property in use on the About page [`/content/pages/about.md`](/content/pages/about.md):
+The `eleventyNavigation` property is slightly more complex. It tells the [Eleventy Navigation Plugin](https://www.11ty.dev/docs/plugins/navigation/) what to put in the menu. This is an example of the property in use on the About page [`/content/pages/about.md`](/content/pages/about.md):
 
 ```yaml
 ---
@@ -238,13 +238,13 @@ The `key` sub-property tells Eleventy to add this page to the navigation with th
 
 Pages are found in the [`/content/pages`](/content/pages) folder.
 
-A page’s `layout` must be set to `page` in the frontmatter. Pages support only the [basic properties](#basic-properties) and [navigation properties](#navigation-properties) listed above.
+A page’s `layout` must be set to `page` in the frontmatter. Pages support only the [basic properties](#basic-properties) listed above.
 
 #### Posts
 
 Posts are found in the [`/content/posts`](/content/posts) folder.
 
-A post’s `layout` must be set to `post` in the frontmatter. Posts support the [basic properties](#basic-properties) and [navigation properties](#navigation-properties) as well as the `date` property. This is an example of a post’s frontmatter:
+A post’s `layout` must be set to `post` in the frontmatter. Posts support the [basic properties](#basic-properties) as well as the `date` property. This is an example of a post’s frontmatter:
 
 ```yaml
 ---
@@ -273,7 +273,7 @@ If you use the `more` comment, only the text preceding the comment will be displ
 
 Projects are found in the [`/content/projects`](/content/projects) folder.
 
-A project’s `layout` must be set to `project` in the frontmatter. Projects support the [basic properties](#basic-properties) and [navigation properties](#navigation-properties) as well as the `dateStart`, `dateEnd`, and `media` properties. This is an example of the frontmatter for a project page.
+A project’s `layout` must be set to `project` in the frontmatter. Projects support the [basic properties](#basic-properties) as well as the `dateStart`, `dateEnd`, and `media` properties. This is an example of the frontmatter for a project page.
 
 ```yaml
 ---
@@ -297,7 +297,7 @@ media:
 
 And these are the project-specific properties in more detail:
 
-| Property    | Format       | Default | Description                                             |
+| Key         | Format       | Default | Description                                             |
 | ----------- | ------------ | ------- | ------------------------------------------------------- |
 | `dateEnd`\* | `YYYY-MM-DD` | -       | The end date of your project, used for sorting purposes |
 | `dateStart` | `YYYY-MM-DD` | -       | The start date of your project                          |
@@ -305,7 +305,7 @@ And these are the project-specific properties in more detail:
 
 The media property is a strictly-formatted YAML list that can contain image and video blocks. The properties that apply to both images and videos are outlined below.
 
-| Property     | Format   | Default | Description                                                      |
+| Key          | Format   | Default | Description                                                      |
 | ------------ | -------- | ------- | ---------------------------------------------------------------- |
 | `caption`    | markdown | -       | A caption describing your media                                  |
 | `filename`\* | text     | -       | The filename of your media                                       |
@@ -316,7 +316,7 @@ The media property is a strictly-formatted YAML list that can contain image and 
 
 Image blocks support the following additional properties:
 
-| Property   | Format  | Default | Description                                                       |
+| Key        | Format  | Default | Description                                                       |
 | ---------- | ------- | ------- | ----------------------------------------------------------------- |
 | `alt`\*    | text    | -       | The alt text for your image                                       |
 | `featured` | boolean | false   | Whether or not the image should be used to represent this project |
@@ -325,7 +325,7 @@ The `featured` property is used to determine which image should be used to repre
 
 Video blocks allow the following additional properties. Note that video autoplay is only supported in certain browsers and devices.
 
-| Property   | Format  | Default | Description                                           |
+| Key        | Format  | Default | Description                                           |
 | ---------- | ------- | ------- | ----------------------------------------------------- |
 | `controls` | boolean | false   | Whether or not the video controls should be displayed |
 | `loop`     | boolean | false   | Whether or not the video should loop                  |
@@ -336,9 +336,9 @@ Video blocks allow the following additional properties. Note that video autoplay
 
 The homepage is the [`/content/index.md`](/content/index.md) file.
 
-The homepage’s `layout` must be set to `home` in the frontmatter. The homepage supports the [basic properties](#basic-properties) and [navigation properties](#navigation-properties) as well as the optional `entries` property.
+The homepage’s `layout` must be set to `home` in the frontmatter. The homepage supports most [basic properties](#basic-properties), however the `permalink` property must not be used.
 
-The `entries` property allows you to specify exactly which projects you want to appear on the homepage. If the `entries` property is not filled out, then the homepage will automatically display all of the projects in order with the most recent first.
+The additional `entries` property allows you to specify exactly which projects you want to appear on the homepage. If the `entries` property is not filled out, then the homepage will automatically display all of the projects in order with the most recent first.
 
 This is an example of the `entries` property in use:
 
@@ -355,21 +355,21 @@ TODO
 
 The blog page is the [`/content/posts.md`](/content/posts.md) file.
 
-The blog page’s `layout` must be set to `posts` in the frontmatter. The blog page supports the [basic properties](#basic-properties) and [navigation properties](#navigation-properties). Markdown written beneath the frontmatter is not displayed.
+The blog page’s `layout` must be set to `posts` in the frontmatter. The blog page supports the [basic properties](#basic-properties). Markdown written beneath the frontmatter is not displayed.
 
 #### Error page
 
 The 404 error page is the [`/content/404.md`](/content/404.md) file.
 
-The 404 error page’s `layout` must be set to `error` in the frontmatter. The error page supports only the `layout` and `title` [basic properties](#basic-properties).
+The 404 error page’s `layout` must be set to `error` in the frontmatter. The error page supports only the `layout` and `title` [basic properties](#basic-properties). The `permalink` property must not be used.
 
 #### RSS feed
 
 The RSS page is the [`/content/rss.md`](/content/rss.md) file.
 
-The RSS page’s `layout` must be set to `feed` in the frontmatter. The RSS page supports only the `layout` and `title` [basic properties](#basic-properties).
+The RSS page’s `layout` must be set to `feed` in the frontmatter. The RSS page supports only the `layout` and `title` [basic properties](#basic-properties). The `permalink` property must not be used.
 
-The RSS feed is automatically published to `/feed.xml`, so for example `https://yoursite.com/feed.xml`. If you want to add an RSS link in your navigation, see the [navigation properties](#navigation-properties) guidance to add an external link.
+The RSS feed is automatically published to `/feed.xml`, so for example `https://yoursite.com/feed.xml`. If you want to add an RSS link in your navigation, see the [basic properties](#basic-properties) guidance to add an external link.
 
 ## Media
 
@@ -390,7 +390,8 @@ Smaller customisations such as altering the CSS can be done without the command 
 These are a few suggestions for altering and extending this site:
 
 - Edit the CSS to change the fonts or background colours
-- Add filtering by tag to the blog
+- Edit the [`/_includes/layouts/base.njk`](/_includes/layouts/base.njk) layout to create a more complex footer
+- Add tags to the blog
 - Add project attributes such as `client` or `category`
 - Add a Projects page that displays a list of all projects
 - Alter the templates to work with a content delivery network (CDN) such as [`imgix`](https://www.imgix.com/) so that your media doesn’t live on GitHub
