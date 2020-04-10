@@ -2,21 +2,53 @@
   "name": "portfolio-starter",
   "version": "0.1.0",
   "description": "A starter kit for static portfolio sites",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx eleventy",
+    "watch": "npx eleventy --watch",
+    "serve": "npx eleventy --serve",
+    "debug": "DEBUG=* npx eleventy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sb-ph/portfolio-2020.git"
+    "url": "git+https://github.com/sb-ph/portfolio-starter.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "static-site-generator",
+    "static-site",
+    "ssg",
+    "website",
+    "blog",
+    "templates",
+    "generator",
+    "framework",
+    "eleventy",
+    "11ty",
+    "html",
+    "markdown",
+    "liquid",
+    "nunjucks",
+    "portfolio",
+    "handlebars",
+    "mustache",
+    "ejs"
+  ],
+  "author": {
+    "name": "Sam Baldwin",
+    "email": "mail@sambaldwin.info",
+    "url": "https://sambaldwin.info/"
+  },
+  "contributors": [
+    {
+      "name": "Piper Haywood",
+      "email": "mail@piperhaywood.com",
+      "url": "https://piperhaywood.com/"
+    }
+  ],
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sb-ph/portfolio-2020/issues"
+    "url": "https://github.com/sb-ph/portfolio-starter/issues"
   },
-  "homepage": "https://github.com/sb-ph/portfolio-2020#readme",
+  "homepage": "https://github.com/sb-ph/portfolio-starter#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-navigation": "^0.1.5",
