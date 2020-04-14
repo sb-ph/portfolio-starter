@@ -1,3 +1,5 @@
+<aside>🚧 WORK IN PROGRESS</aside>
+
 # ![Portfolio Starter](/content/media/banner.gif)
 
 This is a lightweight portfolio starterkit built with [Eleventy](https://www.11ty.dev/). It is geared towards designers, illustrators, architects, and any other individuals who are interested in sharing their work and activity.
