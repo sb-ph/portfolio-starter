@@ -9,18 +9,17 @@ The intended user may not know how to code but is interested in the tech behind 
 For an example of the Portfolio Starter in use, see the demo site [portfolio-starter.sb-ph.com](https://portfolio-starter.sb-ph.com/). The code within this repository drives the demo site.
 
 - [Features](#features)
-- [Getting Started](#getting-started)
-  - [No-code setup](#no-code-setup)
-    - [1. Get a GitHub account](#1-get-a-github-account)
-    - [2. Get an account with a static hosting provider](#2-get-an-account-with-a-static-hosting-provider)
-    - [3. Deploy your website](#3-deploy-your-website)
-    - [4. Edit content in GitHub](#4-edit-content-in-github)
-  - [Command line setup](#command-line-setup)
-    - [1. Set up repo locally and on GitHub](#1-set-up-your-repository)
-    - [2. Build or serve your website](#2-build-or-serve-your-website)
-    - [3. Deploy your website](#3-deploy-your-website)
-    - [4. Edit content locally](#4-edit-content-locally)
-  - [Using a custom domain](#using-a-custom-domain)
+- [No-code setup](#no-code-setup)
+  - [1. Get a GitHub account](#1-get-a-github-account)
+  - [2. Get an account with a static hosting provider](#2-get-an-account-with-a-static-hosting-provider)
+  - [3. Deploy your website](#3-deploy-your-website)
+  - [4. Edit content in GitHub](#4-edit-content-in-github)
+- [Command line setup](#command-line-setup)
+  - [1. Set up repo locally and on GitHub](#1-set-up-your-repository)
+  - [2. Build or serve your website](#2-build-or-serve-your-website)
+  - [3. Deploy your website](#3-deploy-your-website)
+  - [4. Edit content locally](#4-edit-content-locally)
+- [Using a custom domain](#using-a-custom-domain)
 - [Updates and backups](#updates-and-backup)
 - [Content reference](#content-reference)
   - [Global data](#global-data)
@@ -44,23 +43,19 @@ For an example of the Portfolio Starter in use, see the demo site [portfolio-sta
 - Supports posts, projects, pages, a one-level menu, and RSS out-of-the-box
 - Command line not required; you don’t have to use a code editor or the command line to edit or even deploy this website
 
-## Getting Started
-
-To get started, you can go down the [no-code setup](#no-code-setup) route if you don’t want to deal with the command line and would prefer to GitHub’s interface, or you can do the [command line setup](#command-line-setup).
-
-### No-code setup
+## No-code setup
 
 “No-code” is a _little_ bit of a misnomer. Your content files are technically written in code, but it is a very readable syntax called Markdown (more on this later). What we mean by “no-code” is that you won’t have to touch the command line, Git, or open a code editor on your computer.
 
-#### 1. Get a GitHub account
+### 1. Get a GitHub account
 
 GitHub is a platform that stores code. Your website code and content are going to live on GitHub. If you have an account already, go ahead and log in. If not, [sign up for an account](https://github.com/join). The free individual account is sufficient.
 
-#### 2. Get an account with a static hosting provider
+### 2. Get an account with a static hosting provider
 
 [Netlify](https://www.netlify.com/) and [ZEIT](https://zeit.co/) are hosting providers that offer generous free tiers for people with static websites such as this. Netlify is perhaps a _tiny_ bit more straightforward for the following steps and seems to be used by more Eleventy users, but they are both solid platforms. If you have an account with either of these platforms already, log in. If you don’t, sign up for one.
 
-#### 3. Deploy your website
+### 3. Deploy your website
 
 By clicking one of the buttons below, you will fork this repository (i.e. create a duplicate version that lives in your own GitHub account) and then deploy this new website to your static hosting.
 
@@ -81,7 +76,7 @@ Output directory: `_site`
 
 **When you have finished following the instructions above for Netlify or Zeit**, you will be redirected to your website dashboard. This displays your default subdomain and other important information about your site. You’ll also receive some emails letting you know that the services are connected.
 
-#### 4. Edit content in GitHub
+### 4. Edit content in GitHub
 
 To edit or add content without the command line, you need to use GitHub’s interface to navigate your files within the [`/content`](/content) folder in your repository. See the [content reference](#content-reference) to learn more about the structure of the `/content` folder and each of the files within it, particularly the [global data](#global-data) file that includes your website title and URL.
 
@@ -93,29 +88,29 @@ If you want to add media, you must navigate to the [`media`](/content/media) fol
 
 To save edits or additions made in GitHub, you must commit your changes using GitHub’s interface at the base of the page. If you hooked up Netlify or ZEIT in the previous step, a commit will also tell GitHub to automatically deploy your changes. For more on what a commit is, see the [GitHub Glossary](https://help.github.com/en/github/getting-started-with-github/github-glossary). When you commit an edit or an addition directly in GitHub, you can use the default commit message that is pre-filled and should commit directly to the `master` branch (the default setting).
 
-### Command line setup
+## Command line setup
 
 The command line setup instructions assume that you have familiarity with the command line, that you have version 8 or higher of Node.js installed on your computer, and that you have a GitHub account.
 
-#### 1. Set up your repository
+### 1. Set up your repository
 
 Clone repository locally into a named project folder by running `git clone https://github.com/sb-ph/portfolio-starter.git my-website` and then change to the new project folder by running `cd my-website`. Run `npm install` to install the dependencies including Eleventy.
 
 Run `rm -rf .git` to remove the Git history for a fresh start, and then run `git init` to initialise a new git repo. Commit all of your files to create a new `master` branch, and then [add your project to GitHub using the command line](https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line).
 
-#### 2. Build or serve your website
+### 2. Build or serve your website
 
 To build the website in to the gitignored `/_site` directory, run `npx @11ty/eleventy`. To spin up a server for local development or content editing, run `npx @11ty/eleventy --serve`. This will make your site available at <http://localhost:8080>, and the site will automatically reload when you make any changes.
 
-#### 3. Deploy your website
+### 3. Deploy your website
 
 If you want to use Netlify or ZEIT, follow their documentation to get your repository hooked up to your hosting account for continuous deployment. If you want to use another hosting provider, you can find your static files in the `/_site` directory after you generate a build.
 
-#### 4. Edit content locally
+### 4. Edit content locally
 
 To edit content locally, spin up a server by running `npx @11ty/eleventy --serve` and then adjust the Markdown and JSON files within the `/content` directory. If your site is hooked up to continuous deployment, make sure you commit your changes to the right branch (probably `master`) otherwise they will not be deployed.
 
-### Using a custom domain
+## Using a custom domain
 
 Netlify and ZEIT give you a default subdomain automatically when you deploy your website, so this is an optional step. If you want to use your own domain, you should follow their instructions to set this up. [Read more about custom domains on ZEIT](https://zeit.co/docs/v2/custom-domains), or [read more about custom domains on Netlify](https://docs.netlify.com/domains-https/custom-domains/).
 
