@@ -58,19 +58,28 @@ GitHub is a platform that stores code. Your website code and content are going t
 
 #### 2. Get an account with a static hosting provider
 
-[Netlify](https://www.netlify.com/) and [ZEIT](https://zeit.co/) are hosting providers that offer generous free tiers for people with static websites such as this. If you have an account with either of these platforms already, log in. If you don’t, sign up for one.
+[Netlify](https://www.netlify.com/) and [ZEIT](https://zeit.co/) are hosting providers that offer generous free tiers for people with static websites such as this. Netlify is perhaps a _tiny_ bit more straightforward for the following steps and seems to be used by more Eleventy users, but they are both solid platforms. If you have an account with either of these platforms already, log in. If you don’t, sign up for one.
 
 #### 3. Deploy your website
 
 By clicking one of the buttons below, you will fork this repository (i.e. create a duplicate version that lives in your own GitHub account) and then deploy this new website to your static hosting.
 
-If you have a Netlify account:
+Before proceeding, decide on a name for your repository. It should be something that is similar to the name of your site, but it should only include lowercase letters, numbers, and dashes. For example, the name of this repository is `portfolio-starter`.
+
+**If you have a Netlify account**, click this button and follow Netlify’s simple instructions to connect Netlify and GitHub:
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sb-ph/portfolio-starter)
 
-If you have a ZEIT account:
+**If you have a ZEIT account**, click the button below and then follow Zeit’s instructions:
 
 [![Deploy with ZEIT](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/sb-ph/portfolio-starter)
+
+Zeit’s instructions will walk you through how to install Zeit Now for GitHub so that it can create a repository for you and can deploy your changes. Give permission to all repositories when installing Zeit Now. Zeit should auto-detect that you are using Eleventy with settings as follows (you don’t need to worry about the development command):
+
+Build command: `npx @11ty/eleventy`
+Output directory: `_site`
+
+**When you have finished following the instructions above for Netlify or Zeit**, you will be redirected to your website dashboard. This displays your default subdomain and other important information about your site. You’ll also receive some emails letting you know that the services are connected.
 
 #### 4. Edit content in GitHub
 
