@@ -76,6 +76,8 @@ Output directory: `_site`
 
 **When you have finished following the instructions above for Netlify or Zeit**, you will be redirected to your website dashboard. This displays your default subdomain and other important information about your site. You’ll also receive some emails letting you know that the services are connected.
 
+Zeit allows you to select the visibility of your repository when you set it up. Netlify, on the other hand, automatically creates a public repository. See the [GitHub documentation](https://help.github.com/en/github/administering-a-repository/setting-repository-visibility) if you want to adjust the visibility of your repository.
+
 ### 4. Edit content in GitHub
 
 To edit or add content without the command line, you need to use GitHub’s interface to navigate your files within the [`/content`](/content) folder in your repository. See the [content reference](#content-reference) to learn more about the structure of the `/content` folder and each of the files within it, particularly the [global data](#global-data) file that includes your website title and URL.
