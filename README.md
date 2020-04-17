@@ -6,7 +6,7 @@ This is a lightweight portfolio starterkit built with [Eleventy](https://www.11t
 
 The intended user may not know how to code but is interested in the tech behind their website, is willing to write in [Markdown](https://daringfireball.net/projects/markdown/), and is happy to follow along with this documentation.
 
-For an example of the Portfolio Starter in use, see the demo site [portfolio-starter.sb-ph.com](https://portfolio-starter.sb-ph.com/). The code within this repository drives the demo site.
+Visit [portfolio-starter.sb-ph.com](https://portfolio-starter.sb-ph.com/) to check it out. The content and code in this repository drives the demo site.
 
 - [Features](#features)
 - [No-code setup](#no-code-setup)
@@ -57,7 +57,7 @@ GitHub is a platform that stores code. Your website code and content are going t
 
 ### 3. Deploy your website
 
-By clicking one of the buttons below, you will fork this repository (i.e. create a duplicate version that lives in your own GitHub account) and then deploy this new website to your static hosting.
+By clicking one of the buttons below, you will clone this repository (i.e. create a duplicate version that lives in your own GitHub account) and then deploy this new website to your static hosting.
 
 Before proceeding, decide on a name for your repository. It should be something that is similar to the name of your site, but it should only include lowercase letters, numbers, and dashes. For example, the name of this repository is `portfolio-starter`.
 
@@ -120,15 +120,13 @@ If you repoint the nameservers as part of the custom domain setup process and ar
 
 ## Updates and backups
 
-After you’ve created your website, you might want to update it if any changes have been made to Portfolio Starter.
-
-If you’re on an older version of Portfolio Starter and want to update it to a newer version, we recommend doing this manually by replacing all of the folders and files _except_ for the `/content` folder. Though it is possible to automatically sync updates via the command line or GitHub interface, it may not be advisable since it could overwrite your `/content` folder.
-
-Regardless, you should back up your website before making any updates or major changes. Visit your repository homepage and click the green “Clone or download” button to download a zipped file of the entire repository, then store it somewhere safe.
+If you’re on an older version of Portfolio Starter and want to update it to a newer version, we recommend doing this manually by replacing all of the folders and files _except_ for the `/content` folder. You should back up your website before making any updates or major changes. Visit your repository homepage and click the green “Clone or download” button to download a zipped file of the entire repository, then store it somewhere safe.
 
 ## Content reference
 
-All of the content lives in the [`/content`](/content) folder. This includes the [global data](#global-data), [Markdown files for each page](#markdown-files-and-yaml-frontmatter), and [media](#media). It is important to format and organise each of these files in a particular way so that your site deploys without errors and looks as expected.
+All of the content lives in the [`/content`](/content) folder. By default, Portfolio Starter is filled with the content in use on the [demo site](https://portfolio-starter.sb-ph.com/).
+
+The content includes the [global data](#global-data), [Markdown files for each page](#markdown-files-and-yaml-frontmatter), and [media](#media). It is important to format and organise each of these files in a particular way so that your site deploys without errors and looks as expected.
 
 ### Global data
 
