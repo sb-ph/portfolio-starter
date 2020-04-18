@@ -115,12 +115,12 @@ a:hover {
   text-decoration: none;
 }
 
-header a {
+body > header a {
   text-decoration: none;
 }
 
-header a:focus,
-header a:hover {
+body > header a:focus,
+body > header a:hover {
   text-decoration: underline;
 }
 
