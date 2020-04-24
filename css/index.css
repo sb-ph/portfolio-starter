@@ -225,6 +225,7 @@ Homepage
   display: flex;
   flex-direction: column;
   margin-bottom: 8rem;
+  text-align: center;
 }
 
 .home-block > a {
@@ -262,7 +263,6 @@ Homepage
 .home-block-title {
   margin-bottom: 0;
   margin-top: 2rem;
-  text-align: center;
 }
 
 /*
