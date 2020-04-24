@@ -169,7 +169,10 @@ Layout / global includes
   flex-wrap: wrap;
   margin-bottom: 4rem;
   margin-top: 1rem;
-  max-width: var(--width-container);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: var(--width-container);
 }
 
 .site-name {
@@ -201,6 +204,10 @@ Layout / global includes
   font-size: var(--font-size-small);
   margin-top: auto;
   margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: var(--width-container);
 }
 
 .site-footer > p {
@@ -225,6 +232,7 @@ Homepage
   display: flex;
   flex-direction: column;
   margin-bottom: 8rem;
+  text-align: center;
 }
 
 .home-block > a {
@@ -262,7 +270,6 @@ Homepage
 .home-block-title {
   margin-bottom: 0;
   margin-top: 2rem;
-  text-align: center;
 }
 
 /*
