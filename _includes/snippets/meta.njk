@@ -2,13 +2,16 @@
 {%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
 
 {# Meta Tags #}
+<meta property="og:site_name" content="{{ global.title }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:url" content="{{ global.url }}{{ absolutePageUrl }}">
 {% if description %}
-<meta name="description" content="{{ description or meta.description }}">
-<meta property="og:description" content="{{ description or meta.description }}">
+<meta name="description" content="{{ description }}">
+<meta property="og:description" content="{{ description }}">
 {% endif %}
-<meta property="og:title" content="{{ title or meta.title }}">
-<meta property="og:url" content="{{ absolutePageUrl }}">
-{# TODO hook up featured image as social media image – ignore posts for now #}
+{% if image %}
+  <meta property="og:image" content="/media/{{ image }}">
+{% endif %}
 
 {# RSS Feed #}
 {% if collections.posts.length %}
