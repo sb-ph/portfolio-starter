@@ -7,7 +7,8 @@ permalink: "/"
   {{ content | safe }}
 </div>
 
-{% set entries = collections.all | getPagesByPaths(entries) if entries else collections.entrys %}
+
+{% set entries = collections.all | getPagesByPaths(entries) if entries else collections.projects %}
 
 {# For each of the entries #}
 {% for entry in entries %}
