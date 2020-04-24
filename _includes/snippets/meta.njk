@@ -11,4 +11,6 @@
 {# TODO hook up featured image as social media image – ignore posts for now #}
 
 {# RSS Feed #}
+{% if collections.posts.length %}
 <link type="application/atom+xml" rel="alternate" href="{{ global.url }}/feed.xml" title="{{ global.title }}">
+{% endif %}
