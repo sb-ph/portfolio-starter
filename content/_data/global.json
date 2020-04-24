@@ -1,6 +1,5 @@
 {
   "title": "Portfolio Starter",
-  "subtitle": "A starter kit for static portfolio sites",
   "lang": "en-gb",
   "footer": "Built with [Portfolio Starter](https://portfolio-starter.sb-ph.com) (v{{ pkg.version }}) by [Piper Haywood](https://piperhaywood.com) and [Sam Baldwin](https://sambaldwin.info)",
   "url": "https://portfolio-starter.sb-ph.com",

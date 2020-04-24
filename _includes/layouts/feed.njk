@@ -8,9 +8,6 @@
   <?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ title }}</title>
-    {% if global.subtitle %}
-      <subtitle>{{ global.subtitle }}</subtitle>
-    {% endif %}
     <link href="{{ global.url }}/feed.xml" rel="self"/>
     <link href="{{ global.url }}"/>
     <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>

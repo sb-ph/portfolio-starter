@@ -139,7 +139,6 @@ The details in this file should be set when the website is first set up and then
 ```json
 {
   "title": "Tortor Parturient Ridiculus",
-  "subtitle": "A London-based graphic design practice",
   "lang": "en",
   "footer": "(c) Jane Doe, 2020",
   "url": "https://tpr.com",
@@ -154,14 +153,13 @@ This is the only piece of content that must be written in JSON, a text format th
 
 These are the properties in more detail.
 
-| Key        | Format      | Default        | Description                                                                                                                           |
-| ---------- | ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `author`   | JSON object | -              | A JSON object that includes the name and email address of the website author                                                          |
-| `footer`   | Markdown    | a short credit | The footer text written in Markdown                                                                                                   |
-| `lang`\*   | text        | `en`           | The [IANA language tag](https://www.w3.org/International/questions/qa-html-language-declarations) that declares your website language |
-| `subtitle` | text        | -              | A short string that describes your website                                                                                            |
-| `title`\*  | text        | -              | The title of your website                                                                                                             |
-| `url`\*    | url         | -              | Your website URL                                                                                                                      |
+| Key       | Format      | Default        | Description                                                                                                                           |
+| --------- | ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `author`  | JSON object | -              | A JSON object that includes the name and email address of the website author                                                          |
+| `footer`  | Markdown    | a short credit | The footer text written in Markdown                                                                                                   |
+| `lang`\*  | text        | `en`           | The [IANA language tag](https://www.w3.org/International/questions/qa-html-language-declarations) that declares your website language |
+| `title`\* | text        | -              | The title of your website                                                                                                             |
+| `url`\*   | url         | -              | Your website URL                                                                                                                      |
 
 The footer includes a short credit by default. Feel free to replace it with whatever text works best for you. This might include a copyright notice, a colophon, contact details or other salient information. The footer does not support line breaks.
 
