@@ -1,6 +1,5 @@
 ---
 layout: project
-title: Sample project 3
 dateEnd: 2020-04-03
 media:
   - type: image

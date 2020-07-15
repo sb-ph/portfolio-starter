@@ -1,5 +1,4 @@
 ---
-layout: project
 title: Sample project 1
 dateEnd: 2020-04-05
 media:
