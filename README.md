@@ -33,7 +33,7 @@ Visit [portfolio-starter.sb-ph.com](https://portfolio-starter.sb-ph.com/) to che
   - [Error page](#error-page)
   - [RSS feed](#rss-feed)
   - [Media](#media)
-- [Altering and extending your site](#altering-or-extending-your-site)
+- [Altering and extending your site](#altering-and-extending-your-site)
 
 ## Features
 
